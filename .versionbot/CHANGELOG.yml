@@ -1,0 +1,14 @@
+- commits:
+    - subject: Initialize repository
+      hash: 87139ac471ca5dc3691794ccbf0040aaad93fcd8
+      body: ""
+      footer:
+        Change-type: major
+        change-type: major
+        Signed-off-by: Josh Bowling <josh@balena.io>
+        signed-off-by: Josh Bowling <josh@balena.io>
+      author: Josh Bowling
+      nested: []
+  version: 1.0.0
+  title: "'Initialize repository'"
+  date: 2022-03-22T03:20:34.298Z

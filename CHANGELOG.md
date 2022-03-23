@@ -4,4 +4,8 @@
 
 ## 1.0.1 - 2022-03-22
 
+## 1.0.2 - 2022-03-22
+
+* Update internal-patch [Renovate Bot]
+
 * Update upstreams in repo.yml [Josh Bowling]

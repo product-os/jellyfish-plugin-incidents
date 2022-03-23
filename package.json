@@ -43,11 +43,11 @@
   "author": "Balena.io. <hello@balena.io>",
   "license": "AGPL-3.0",
   "dependencies": {
-    "@balena/jellyfish-worker": "^20.2.9"
+    "@balena/jellyfish-worker": "^20.2.10"
   },
   "devDependencies": {
     "@balena/jellyfish-config": "^2.0.4",
-    "@balena/jellyfish-plugin-channels": "^2.0.63",
+    "@balena/jellyfish-plugin-channels": "^2.0.64",
     "@balena/jellyfish-plugin-default": "^24.0.37",
     "@balena/jellyfish-plugin-product-os": "^4.0.55",
     "@balena/jellyfish-types": "^2.0.4",

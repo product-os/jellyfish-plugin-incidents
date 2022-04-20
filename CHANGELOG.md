@@ -4,6 +4,10 @@
 
 ## 1.0.1 - 2022-03-22
 
+## 1.0.44 - 2022-04-19
+
+* Bump internal deps [Josh Bowling]
+
 ## 1.0.43 - 2022-04-19
 
 * Update internal-patch [Renovate Bot]

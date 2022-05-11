@@ -42,14 +42,11 @@
   },
   "author": "Balena.io. <hello@balena.io>",
   "license": "AGPL-3.0",
-  "dependencies": {
-    "@balena/jellyfish-worker": "^23.0.17"
-  },
   "devDependencies": {
     "@balena/jellyfish-config": "^2.0.6",
-    "@balena/jellyfish-plugin-channels": "^2.0.113",
-    "@balena/jellyfish-plugin-default": "^24.0.110",
-    "@balena/jellyfish-plugin-product-os": "^5.0.21",
+    "@balena/jellyfish-plugin-channels": "^2.0.114",
+    "@balena/jellyfish-plugin-default": "^25.1.0",
+    "@balena/jellyfish-plugin-product-os": "^5.0.24",
     "@balena/jellyfish-types": "^2.0.5",
     "@balena/lint": "^6.2.0",
     "@types/jest": "^27.5.0",
@@ -66,5 +63,8 @@
   },
   "versionist": {
     "publishedAt": "2022-05-10T06:16:19.066Z"
+  },
+  "dependencies": {
+    "@balena/jellyfish-worker": "^24.2.0"
   }
 }

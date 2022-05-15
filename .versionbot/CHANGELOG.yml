@@ -1,4 +1,16 @@
 - commits:
+    - subject: Update @balena/jellyfish-worker from 24.2.0 to 26.0.3
+      hash: 80193eaf39fa070faddf29dcaaa914680535cf70
+      body: ""
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: Renovate Bot
+      nested: []
+  version: 2.0.1
+  title: "'Update @balena/jellyfish-worker from 24.2.0 to 26.0.3'"
+  date: 2022-05-14T04:54:58.892Z
+- commits:
     - subject: Update worker to 24
       hash: 0b0874c7389fbdc6e65b778221a3d080920f8331
       body: ""

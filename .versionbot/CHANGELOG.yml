@@ -1,4 +1,16 @@
 - commits:
+    - subject: Update dependencies (internal patch bumps)
+      hash: bc3d4b3a9e7ea0252e47dbe3b67405759e4364ee
+      body: ""
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: Renovate Bot
+      nested: []
+  version: 2.0.2
+  title: "'Update dependencies (internal patch bumps)'"
+  date: 2022-05-15T14:23:22.342Z
+- commits:
     - subject: Update @balena/jellyfish-worker from 24.2.0 to 26.0.3
       hash: 80193eaf39fa070faddf29dcaaa914680535cf70
       body: ""

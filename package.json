@@ -44,9 +44,9 @@
   "license": "AGPL-3.0",
   "devDependencies": {
     "@balena/jellyfish-config": "^2.0.6",
-    "@balena/jellyfish-plugin-channels": "^2.0.116",
-    "@balena/jellyfish-plugin-default": "^25.1.0",
-    "@balena/jellyfish-plugin-product-os": "^7.0.5",
+    "@balena/jellyfish-plugin-channels": "^3.1.6",
+    "@balena/jellyfish-plugin-default": "^27.3.3",
+    "@balena/jellyfish-plugin-product-os": "^7.0.9",
     "@balena/jellyfish-types": "^2.0.5",
     "@balena/lint": "^6.2.0",
     "@types/jest": "^27.5.1",
@@ -65,6 +65,6 @@
     "publishedAt": "2022-05-28T00:58:59.426Z"
   },
   "dependencies": {
-    "@balena/jellyfish-worker": "^26.0.3"
+    "@balena/jellyfish-worker": "^27.1.1"
   }
 }

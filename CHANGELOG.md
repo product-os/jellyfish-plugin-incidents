@@ -4,6 +4,10 @@
 
 ## 1.0.1 - 2022-03-22
 
+## 2.0.5 - 2022-05-28
+
+* Bump internal deps [Josh Bowling]
+
 ## 2.0.4 - 2022-05-28
 
 * Update external-non-major (external non-major bumps) [Renovate Bot]

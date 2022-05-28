@@ -4,6 +4,11 @@
 
 ## 1.0.1 - 2022-03-22
 
+## 2.0.4 - 2022-05-28
+
+* Update external-non-major (external non-major bumps) [Renovate Bot]
+* Update @balena/jellyfish-plugin-product-os from 5.0.24 to 7.0.5 [Renovate Bot]
+
 ## 2.0.3 - 2022-05-15
 
 * Update external-non-major [Renovate Bot]

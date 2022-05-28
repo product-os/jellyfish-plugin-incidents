@@ -1,4 +1,24 @@
 - commits:
+    - subject: Update external-non-major (external non-major bumps)
+      hash: 0c6ef083fb008c2c1153f9cffb9efdbdfbd213b9
+      body: ""
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: Renovate Bot
+      nested: []
+    - subject: Update @balena/jellyfish-plugin-product-os from 5.0.24 to 7.0.5
+      hash: 46d2c9242ab31acdd57c17498ac23e8444a59ae0
+      body: ""
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: Renovate Bot
+      nested: []
+  version: 2.0.4
+  title: "'Update external-non-major (external non-major bumps)'"
+  date: 2022-05-28T00:58:59.281Z
+- commits:
     - subject: Update external-non-major
       hash: bc5528b464fce54289baebb293382c2606b4c381
       body: ""

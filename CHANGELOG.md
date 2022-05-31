@@ -4,6 +4,10 @@
 
 ## 1.0.1 - 2022-03-22
 
+## 2.0.6 - 2022-05-30
+
+* Update typedoc from 0.22.15 to 0.22.16 [Renovate Bot]
+
 ## 2.0.5 - 2022-05-28
 
 * Bump internal deps [Josh Bowling]

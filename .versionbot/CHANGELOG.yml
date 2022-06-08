@@ -1,4 +1,16 @@
 - commits:
+    - subject: Update @balena/jellyfish-plugin-channels from 3.1.7 to 3.2.0
+      hash: 6c1cbe40523aabf9c8e6e6295cf29fdb550e17d6
+      body: ""
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: Renovate Bot
+      nested: []
+  version: 2.0.16
+  title: "'Update @balena/jellyfish-plugin-channels from 3.1.7 to 3.2.0'"
+  date: 2022-06-08T22:49:01.656Z
+- commits:
     - subject: Update @balena/jellyfish-worker from 28.0.0 to 29.1.0
       hash: 03f3717a05c824cbf46e491912fb9cde01bc9e60
       body: ""

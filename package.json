@@ -65,6 +65,6 @@
     "publishedAt": "2022-06-09T03:25:33.243Z"
   },
   "dependencies": {
-    "@balena/jellyfish-worker": "^29.1.0"
+    "@balena/jellyfish-worker": "^30.0.13"
   }
 }

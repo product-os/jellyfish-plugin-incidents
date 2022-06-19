@@ -1,5 +1,8 @@
-const base = require('@balena/jellyfish-config/config/jest.config')
-
 module.exports = {
-	...base
+	preset: "ts-jest",
+	testEnvironment: "node",
+	roots: [
+		"lib",
+		"test",
+	],
 };

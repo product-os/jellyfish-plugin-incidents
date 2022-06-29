@@ -4,6 +4,10 @@
 
 ## 1.0.1 - 2022-03-22
 
+## 2.0.28 - 2022-06-29
+
+* Drop plugin-channels [Josh Bowling]
+
 ## 2.0.27 - 2022-06-28
 
 * Update @balena/jellyfish-worker from 30.0.23 to 30.1.0 [renovate[bot]]

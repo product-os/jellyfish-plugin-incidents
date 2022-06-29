@@ -1,4 +1,18 @@
 - commits:
+    - subject: Drop plugin-channels
+      hash: b6813c65abf8b2508ca508eb92742cbe849ca1d4
+      body: ""
+      footer:
+        Change-type: patch
+        change-type: patch
+        Signed-off-by: Josh Bowling <josh@balena.io>
+        signed-off-by: Josh Bowling <josh@balena.io>
+      author: Josh Bowling
+      nested: []
+  version: 2.0.28
+  title: "'Drop plugin-channels'"
+  date: 2022-06-29T03:54:07.009Z
+- commits:
     - subject: Update @balena/jellyfish-worker from 30.0.23 to 30.1.0
       hash: 553978c380aa069ee09c2a57db3318ceb32e05d7
       body: ""

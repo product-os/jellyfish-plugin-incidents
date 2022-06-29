@@ -1,13 +1,8 @@
-import { channelsPlugin } from '@balena/jellyfish-plugin-channels';
 import { defaultPlugin } from '@balena/jellyfish-plugin-default';
 import { PluginManager } from '@balena/jellyfish-worker';
 import { incidentsPlugin } from '../../lib/index';
 
-const pluginManager = new PluginManager([
-	defaultPlugin(),
-	channelsPlugin(),
-	incidentsPlugin(),
-]);
+const pluginManager = new PluginManager([defaultPlugin(), incidentsPlugin()]);
 
 test('Expected contracts are loaded', () => {
 	const contracts = pluginManager.getCards();

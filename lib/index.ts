@@ -16,11 +16,7 @@ export const incidentsPlugin = (): PluginDefinition => {
 		requires: [
 			{
 				slug: 'plugin-default',
-				version: '>=24.x',
-			},
-			{
-				slug: 'plugin-channels',
-				version: '>=2.x',
+				version: '>=27.x',
 			},
 		],
 	};

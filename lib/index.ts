@@ -1,5 +1,6 @@
 import type { PluginDefinition } from '@balena/jellyfish-worker';
 import { contracts } from './contracts';
+import { integrations } from './integrations';
 
 // tslint:disable-next-line: no-var-requires
 const { version } = require('../package.json');
@@ -13,6 +14,7 @@ export const incidentsPlugin = (): PluginDefinition => {
 		name: 'Incidents Plugin',
 		version,
 		contracts,
+		integrationMap: integrations,
 		requires: [
 			{
 				slug: 'plugin-default',

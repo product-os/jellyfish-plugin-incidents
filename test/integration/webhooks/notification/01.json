@@ -1,0 +1,7 @@
+{
+  "headers": {},
+  "payload": {
+    "label": "foobar",
+    "event": "down"
+  }
+}

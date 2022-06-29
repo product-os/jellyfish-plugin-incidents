@@ -1,0 +1,52 @@
+{
+	"head": {
+		"type": "incident@1.0.0",
+		"name": null,
+		"slug": "incidient-48738dbf-4f10-4fb1-8093-ea320ded95cc",
+		"active": true,
+		"loop": null,
+		"capabilities": [],
+		"requires": [],
+		"tags": [],
+		"version": "1.0.0",
+		"data": {
+			"label": "foobar",
+			"event": "down",
+			"status": "open"
+		}
+	},
+	"tail": [
+		{
+			"active": true,
+			"capabilities": [],
+			"data": {
+			  "actor": {
+			    "active": true,
+			    "slug": "user-admin"
+			  },
+			  "payload": {
+			    "active": true,
+			    "capabilities": [],
+			    "data": {
+			      "event": "down",
+			      "label": "foobar",
+			      "status": "open"
+			    },
+			    "requires": [],
+			    "tags": [],
+			    "type": "incident@1.0.0",
+			    "version": "1.0.0"
+			  },
+			  "target": "406e82f6-a2f6-40a9-8ce1-73d0720b1ec0",
+			  "timestamp": "2022-06-29T04:32:31.046Z"
+			},
+			"id": "0bac3056-488a-4d4e-9ffa-0f0574a335b2",
+			"loop": null,
+			"name": null,
+			"requires": [],
+			"tags": [],
+			"type": "create@1.0.0",
+			"version": "1.0.0"
+		}
+	]
+}

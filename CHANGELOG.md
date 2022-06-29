@@ -4,6 +4,10 @@
 
 ## 1.0.1 - 2022-03-22
 
+## 2.1.0 - 2022-06-29
+
+* Add Nodeping integration [Josh Bowling]
+
 ## 2.0.28 - 2022-06-29
 
 * Drop plugin-channels [Josh Bowling]

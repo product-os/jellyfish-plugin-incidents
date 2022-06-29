@@ -1,4 +1,18 @@
 - commits:
+    - subject: Add Nodeping integration
+      hash: 9e5db0f800d31cd7dbb979c335ce42472102b1b0
+      body: ""
+      footer:
+        Change-type: minor
+        change-type: minor
+        Signed-off-by: Josh Bowling <josh@balena.io>
+        signed-off-by: Josh Bowling <josh@balena.io>
+      author: Josh Bowling
+      nested: []
+  version: 2.1.0
+  title: "'Add Nodeping integration'"
+  date: 2022-06-29T04:42:32.621Z
+- commits:
     - subject: Drop plugin-channels
       hash: b6813c65abf8b2508ca508eb92742cbe849ca1d4
       body: ""

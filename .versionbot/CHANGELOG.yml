@@ -1,4 +1,18 @@
 - commits:
+    - subject: Improve Nodeping integration, add types
+      hash: 494e57b3ab172de18d17a10fb2b46b16f27d73a3
+      body: ""
+      footer:
+        Change-type: minor
+        change-type: minor
+        Signed-off-by: Josh Bowling <josh@balena.io>
+        signed-off-by: Josh Bowling <josh@balena.io>
+      author: Josh Bowling
+      nested: []
+  version: 2.2.0
+  title: "'Improve Nodeping integration, add types'"
+  date: 2022-06-30T05:54:27.472Z
+- commits:
     - subject: Add Nodeping integration
       hash: 9e5db0f800d31cd7dbb979c335ce42472102b1b0
       body: ""

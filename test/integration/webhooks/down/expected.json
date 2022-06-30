@@ -10,9 +10,11 @@
 		"tags": [],
 		"version": "1.0.0",
 		"data": {
-			"label": "foobar",
-			"event": "down",
-			"status": "open"
+			"service": "foobar",
+			"status": "open",
+			"mirrors": [
+				"https://api.nodeping.com/api/v1/checks/201205050153W2Q4C-0J2HSIRF"
+			]
 		}
 	},
 	"tail": [
@@ -28,9 +30,11 @@
 			    "active": true,
 			    "capabilities": [],
 			    "data": {
-			      "event": "down",
-			      "label": "foobar",
-			      "status": "open"
+					"service": "foobar",
+					"status": "open",
+					"mirrors": [
+						"https://api.nodeping.com/api/v1/checks/201205050153W2Q4C-0J2HSIRF"
+					]
 			    },
 			    "requires": [],
 			    "tags": [],

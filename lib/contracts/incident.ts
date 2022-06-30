@@ -25,20 +25,24 @@ export const incident: ContractDefinition = contractMixins.mixin(
 			type: 'object',
 			required: ['data'],
 			properties: {
-				name: {
-					type: 'string',
-				},
 				data: {
 					type: 'object',
 					properties: {
-						title: {
+						service: {
 							title: 'Title',
-							type: ['string', 'null'],
+							type: 'string',
 							fullTextSearch: true,
 						},
 						description: {
 							title: 'Description',
 							type: 'string',
+							fullTextSearch: true,
+						},
+						mirrors: {
+							type: 'array',
+							items: {
+								type: 'string',
+							},
 							fullTextSearch: true,
 						},
 					},

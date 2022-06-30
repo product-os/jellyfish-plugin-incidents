@@ -5,8 +5,17 @@ import {
 	SequenceItem,
 } from '@balena/jellyfish-worker';
 import { v4 as uuidv4 } from 'uuid';
+import type { IncidentContract } from '../types';
 
 const SLUG = 'nodeping';
+const CHECKS_ENDPOINT = 'https://api.nodeping.com/api/v1/checks';
+
+interface NodepingPayload {
+	event: string;
+	label: string;
+	id: PerformanceServerTiming;
+	[k: string]: unknown;
+}
 
 export class NodepingIntegration implements Integration {
 	public slug = SLUG;
@@ -30,16 +39,37 @@ export class NodepingIntegration implements Integration {
 	}
 
 	public async translate(event: Contract): Promise<SequenceItem[]> {
-		const nodepingEvent = (event.data as any).payload.event;
-		const nodepingLabel = (event.data as any).payload.label;
-		if (nodepingEvent === '' || nodepingLabel === '') {
-			this.context.log.warn('Invalid nodeping event', {
-				nodepingEvent,
-				nodepingLabel,
+		const payload = event.data.payload as NodepingPayload;
+		if (!payload.event || !payload.label || !payload.id) {
+			this.context.log.warn('Invalid Nodeping event', {
+				payload: event.data.payload,
 			});
 			return [];
 		}
 
+		// If event is "up", attempt to update an existing "down" incident
+		const status = payload.event === 'up' ? 'resolved' : 'open';
+		const mirrorId = `${CHECKS_ENDPOINT}/${payload.id}`;
+		if (status === 'resolved') {
+			const incident = (await this.context.getElementByMirrorId(
+				'incident@1.0.0',
+				mirrorId,
+			)) as IncidentContract;
+			if (incident) {
+				incident.data.status = status;
+				return [
+					{
+						time: new Date(),
+						actor: await this.context.getActorId({
+							handle: this.options.defaultUser,
+						}),
+						card: incident,
+					},
+				];
+			}
+		}
+
+		// Otherwise create a new incident contract
 		return [
 			{
 				time: new Date(),
@@ -50,9 +80,9 @@ export class NodepingIntegration implements Integration {
 					type: 'incident@1.0.0',
 					slug: `incident-${uuidv4()}`,
 					data: {
-						event: (event.data as any).payload.event,
-						label: (event.data as any).payload.label,
-						status: 'open',
+						service: payload.label,
+						status,
+						mirrors: [mirrorId],
 					},
 				},
 			},

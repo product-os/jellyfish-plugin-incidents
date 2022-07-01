@@ -2,7 +2,7 @@
 	"head": {
 		"type": "incident@1.0.0",
 		"name": null,
-		"slug": "incidient-48738dbf-4f10-4fb1-8093-ea320ded95cc",
+		"slug": "incident-48738dbf-4f10-4fb1-8093-ea320ded95cc",
 		"active": true,
 		"loop": null,
 		"capabilities": [],
@@ -10,10 +10,10 @@
 		"tags": [],
 		"version": "1.0.0",
 		"data": {
-			"service": "foobar",
+			"description": "Major System Outage",
 			"status": "open",
 			"mirrors": [
-				"https://api.nodeping.com/api/v1/checks/201205050153W2Q4C-0J2HSIRF"
+				"https://api.statuspage.io/v1/pages/j2mfxwj97wnj/incidents/lbkhbwn21v5q"
 			]
 		}
 	},
@@ -30,10 +30,10 @@
 			    "active": true,
 			    "capabilities": [],
 			    "data": {
-					"service": "foobar",
+					"description": "Major System Outage",
 					"status": "open",
 					"mirrors": [
-						"https://api.nodeping.com/api/v1/checks/201205050153W2Q4C-0J2HSIRF"
+						"https://api.statuspage.io/v1/pages/j2mfxwj97wnj/incidents/lbkhbwn21v5q"
 					]
 			    },
 			    "requires": [],

@@ -3,7 +3,7 @@ import { contractMixins } from '@balena/jellyfish-worker';
 
 const slug = 'incident';
 const type = 'type@1.0.0';
-const statusOptions = [
+export const statusOptions = [
 	'open',
 	'investigating',
 	'identified',

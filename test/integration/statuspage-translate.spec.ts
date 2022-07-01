@@ -13,7 +13,7 @@ beforeAll(async () => {
 		plugins: [productOsPlugin(), defaultPlugin(), incidentsPlugin()],
 	});
 	await workerTestUtils.translateBeforeAll(ctx);
-});
+}, 10000);
 
 afterEach(async () => {
 	await workerTestUtils.translateAfterEach(ctx);
@@ -24,7 +24,7 @@ afterAll(() => {
 	return workerTestUtils.destroyContext(ctx);
 });
 
-describe('nodeping-translate', () => {
+describe('statuspage-translate', () => {
 	for (const testCaseName of Object.keys(webhooks)) {
 		const testCase = webhooks[testCaseName];
 		const expected = {
@@ -56,8 +56,8 @@ describe('nodeping-translate', () => {
 						variant: variation.name,
 					},
 					{
-						source: 'nodeping',
-						baseUrl: 'https://nodeping.com',
+						source: 'statuspage',
+						baseUrl: 'https://api.statuspage.io',
 						uriPath: /.*/,
 						basePath: path.join(__dirname, 'webhooks'),
 						isAuthorized: () => {

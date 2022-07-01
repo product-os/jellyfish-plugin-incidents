@@ -1,6 +1,6 @@
 import type { IntegrationDefinition, Map } from '@balena/jellyfish-worker';
-import { nodepingIntegrationDefinition } from './nodeping';
+import { statuspageIntegrationDefinition } from './statuspage';
 
 export const integrations: Map<IntegrationDefinition> = {
-	nodeping: nodepingIntegrationDefinition,
+	statuspage: statuspageIntegrationDefinition,
 };

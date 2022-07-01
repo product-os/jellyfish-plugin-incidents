@@ -1,4 +1,18 @@
 - commits:
+    - subject: Replace nodeping with statuspage
+      hash: ada08f77ecccffbad7af1ded70e1bf6345a273ce
+      body: ""
+      footer:
+        Change-type: major
+        change-type: major
+        Signed-off-by: Josh Bowling <josh@balena.io>
+        signed-off-by: Josh Bowling <josh@balena.io>
+      author: Josh Bowling
+      nested: []
+  version: 3.0.0
+  title: "'Replace nodeping with statuspage'"
+  date: 2022-07-01T06:04:08.706Z
+- commits:
     - subject: Improve Nodeping integration, add types
       hash: 494e57b3ab172de18d17a10fb2b46b16f27d73a3
       body: ""

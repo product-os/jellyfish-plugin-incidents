@@ -4,6 +4,10 @@
 
 ## 1.0.1 - 2022-03-22
 
+## 3.0.0 - 2022-07-01
+
+* Replace nodeping with statuspage [Josh Bowling]
+
 ## 2.2.0 - 2022-06-30
 
 * Improve Nodeping integration, add types [Josh Bowling]

@@ -1,4 +1,16 @@
 - commits:
+    - subject: Update typedoc from 0.23.2 to 0.23.3
+      hash: 5769ee1562ec835b3ae62aad6f17d6c2da8a30b9
+      body: ""
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: renovate[bot]
+      nested: []
+  version: 3.0.1
+  title: "'Update typedoc from 0.23.2 to 0.23.3'"
+  date: 2022-07-01T20:33:54.252Z
+- commits:
     - subject: Replace nodeping with statuspage
       hash: ada08f77ecccffbad7af1ded70e1bf6345a273ce
       body: ""

@@ -1,4 +1,4 @@
-import type { ContractDefinition } from '@balena/jellyfish-types/build/core';
+import type { ContractDefinition } from 'autumndb';
 import { channelIncidents } from './channel-incidents';
 import { channelPostMortems } from './channel-post-mortems';
 import { incident } from './incident';

@@ -1,9 +1,9 @@
-import type { Contract } from '@balena/jellyfish-types/build/core';
 import {
 	Integration,
 	IntegrationDefinition,
 	SequenceItem,
 } from '@balena/jellyfish-worker';
+import type { Contract } from 'autumndb';
 import _ from 'lodash';
 import { v4 as uuidv4 } from 'uuid';
 import { statusOptions } from '../contracts/incident';

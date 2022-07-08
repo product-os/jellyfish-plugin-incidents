@@ -1,4 +1,3 @@
-import { defaultEnvironment as environment } from '@balena/jellyfish-environment';
 import {
 	Integration,
 	IntegrationDefinition,
@@ -9,6 +8,7 @@ import axios from 'axios';
 import _ from 'lodash';
 import * as skhema from 'skhema';
 import { v4 as uuidv4 } from 'uuid';
+import { environment } from '../environment';
 import { statusOptions } from '../contracts/incident';
 
 const SLUG = 'statuspage';
@@ -51,18 +51,29 @@ export class StatuspageIntegration implements Integration {
 	}
 
 	public async translate(event: Contract): Promise<SequenceItem[]> {
-		// Validate webhook payload
+		// Validate webhook Statuspage page ID
 		const payload = event.data.payload as IncidentUpdatePayload;
+		if (!environment.statuspage.pages[payload.page.id]) {
+			this.context.log.warn('Webhook from unknown Statuspage', {
+				pageId: payload.page.id,
+			});
+			return [];
+		}
+
+		// Validate webhook incident ID and status
 		const remoteIncident = await axios({
 			method: 'GET',
-			url: `${STATUSPAGE_ENDPOINT}/pages/${environment.integration.statuspage.pageId}/incidents/${payload.incident.id}`,
+			url: `${STATUSPAGE_ENDPOINT}/pages/${payload.page.id}/incidents/${payload.incident.id}`,
+			headers: {
+				Authorization: `OAuth ${environment.statuspage.pages[payload.page.id]}`,
+			},
 		});
 		if (
 			remoteIncident.status !== 200 ||
 			remoteIncident.data.status !== payload.incident.status
 		) {
 			this.context.log.warn('Statuspage incident status mismatch', {
-				pageId: environment.integration.statuspage.pageId,
+				pageId: payload.page.id,
 				incidentId: payload.incident.id,
 				remoteStatus: remoteIncident.data.status,
 				webhookStatus: payload.incident.status,

@@ -1,4 +1,18 @@
 - commits:
+    - subject: Add Statuspage webhook validation
+      hash: c4a05aa7dd667def15b95ee9048771b0d32f8c29
+      body: ""
+      footer:
+        Change-type: minor
+        change-type: minor
+        Signed-off-by: Josh Bowling <josh@balena.io>
+        signed-off-by: Josh Bowling <josh@balena.io>
+      author: Josh Bowling
+      nested: []
+  version: 3.1.0
+  title: "'Add Statuspage webhook validation'"
+  date: 2022-07-08T05:22:27.308Z
+- commits:
     - subject: Update typedoc from 0.23.5 to 0.23.6
       hash: bcbfc0c164c6d6a5b86b1bb88a07781e1184b6bc
       body: ""

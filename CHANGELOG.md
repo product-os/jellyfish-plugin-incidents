@@ -4,6 +4,10 @@
 
 ## 1.0.1 - 2022-03-22
 
+## 3.1.0 - 2022-07-08
+
+* Add Statuspage webhook validation [Josh Bowling]
+
 ## 3.0.8 - 2022-07-08
 
 * Update typedoc from 0.23.5 to 0.23.6 [renovate[bot]]

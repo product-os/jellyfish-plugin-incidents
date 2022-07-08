@@ -1,10 +1,13 @@
+import { defaultEnvironment as environment } from '@balena/jellyfish-environment';
 import {
 	Integration,
 	IntegrationDefinition,
 	SequenceItem,
 } from '@balena/jellyfish-worker';
 import type { Contract } from 'autumndb';
+import axios from 'axios';
 import _ from 'lodash';
+import * as skhema from 'skhema';
 import { v4 as uuidv4 } from 'uuid';
 import { statusOptions } from '../contracts/incident';
 
@@ -48,7 +51,26 @@ export class StatuspageIntegration implements Integration {
 	}
 
 	public async translate(event: Contract): Promise<SequenceItem[]> {
+		// Validate webhook payload
 		const payload = event.data.payload as IncidentUpdatePayload;
+		const remoteIncident = await axios({
+			method: 'GET',
+			url: `${STATUSPAGE_ENDPOINT}/pages/${environment.integration.statuspage.pageId}/incidents/${payload.incident.id}`,
+		});
+		if (
+			remoteIncident.status !== 200 ||
+			remoteIncident.data.status !== payload.incident.status
+		) {
+			this.context.log.warn('Statuspage incident status mismatch', {
+				pageId: environment.integration.statuspage.pageId,
+				incidentId: payload.incident.id,
+				remoteStatus: remoteIncident.data.status,
+				webhookStatus: payload.incident.status,
+			});
+			return [];
+		}
+
+		// Upsert incident contract
 		const status = statusOptions.includes(payload.incident.status)
 			? payload.incident.status
 			: 'open';
@@ -94,12 +116,45 @@ export const statuspageIntegrationDefinition: IntegrationDefinition = {
 	slug: SLUG,
 
 	initialize: async (options) => new StatuspageIntegration(options),
-	isEventValid: (_logContext, _token, rawEvent, _headers): boolean => {
-		// TODO: Add proper signature validation
-		console.log('rawEvent:', rawEvent);
-		if (_.has(rawEvent, ['data', 'payload', 'incident'])) {
+	isEventValid: (_logConext, _token, rawEvent, _headers): boolean => {
+		if (
+			skhema.isValid(
+				{
+					type: 'object',
+					required: ['page', 'incident'],
+					properties: {
+						page: {
+							type: 'object',
+							required: ['id', 'status_description'],
+							properties: {
+								id: {
+									type: 'string',
+								},
+								status_description: {
+									type: 'string',
+								},
+							},
+						},
+						incident: {
+							type: 'object',
+							required: ['id', 'status'],
+							properties: {
+								id: {
+									type: 'string',
+								},
+								status: {
+									type: 'string',
+								},
+							},
+						},
+					},
+				},
+				JSON.parse(rawEvent),
+			)
+		) {
 			return true;
 		}
+
 		return false;
 	},
 };

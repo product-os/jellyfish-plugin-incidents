@@ -1,4 +1,18 @@
 - commits:
+    - subject: Improve environment variable logic
+      hash: 875519dc6f0b054e3771a705244c98619bcfcdda
+      body: ""
+      footer:
+        Change-type: patch
+        change-type: patch
+        Signed-off-by: Josh Bowling <josh@balena.io>
+        signed-off-by: Josh Bowling <josh@balena.io>
+      author: Josh Bowling
+      nested: []
+  version: 4.0.3
+  title: "'Improve environment variable logic'"
+  date: 2022-07-09T06:38:55.939Z
+- commits:
     - subject: Add environment override unit test
       hash: 0f12cbbbc626289f7dd932111b2d272f303b668a
       body: ""

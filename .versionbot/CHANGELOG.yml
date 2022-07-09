@@ -1,4 +1,18 @@
 - commits:
+    - subject: Add environment override unit test
+      hash: 0f12cbbbc626289f7dd932111b2d272f303b668a
+      body: ""
+      footer:
+        Change-type: patch
+        change-type: patch
+        Signed-off-by: Josh Bowling <josh@balena.io>
+        signed-off-by: Josh Bowling <josh@balena.io>
+      author: Josh Bowling
+      nested: []
+  version: 4.0.2
+  title: "'Add environment override unit test'"
+  date: 2022-07-09T06:15:51.092Z
+- commits:
     - subject: Add environment unit test
       hash: ef6603039d16364f40335563da2e677901dc317f
       body: ""

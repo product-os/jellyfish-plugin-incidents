@@ -4,6 +4,10 @@
 
 ## 1.0.1 - 2022-03-22
 
+## 4.0.2 - 2022-07-09
+
+* Add environment override unit test [Josh Bowling]
+
 ## 4.0.1 - 2022-07-09
 
 * Add environment unit test [Josh Bowling]

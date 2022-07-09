@@ -8,16 +8,6 @@ import webhooks from './webhooks';
 
 let ctx: workerTestUtils.TestContext;
 
-/*
-function nockStatuspage(incidentId: string, data: any) {
-	nock(`https://api.statuspage.io/v1/pages/${environment.integration.statuspage.pageId}`)
-		.get(`/v1/pages/${environment.integration.statuspage.pageId}/incidents/${incidentId}`)
-		.reply(() => {
-			return data;
-		});
-}
-*/
-
 beforeAll(async () => {
 	ctx = await workerTestUtils.newContext({
 		plugins: [productOsPlugin(), defaultPlugin(), incidentsPlugin()],

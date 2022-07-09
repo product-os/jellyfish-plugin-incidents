@@ -4,6 +4,10 @@
 
 ## 1.0.1 - 2022-03-22
 
+## 4.0.0 - 2022-07-09
+
+* Drop jellyfish-environment, support multiple pages [Josh Bowling]
+
 ## 3.1.0 - 2022-07-08
 
 * Add Statuspage webhook validation [Josh Bowling]

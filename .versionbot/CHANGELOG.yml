@@ -1,4 +1,18 @@
 - commits:
+    - subject: Drop jellyfish-environment, support multiple pages
+      hash: 9a538ed54fe3a82bc9050f03b8b76a6537f139e1
+      body: ""
+      footer:
+        Change-type: major
+        change-type: major
+        Signed-off-by: Josh Bowling <josh@balena.io>
+        signed-off-by: Josh Bowling <josh@balena.io>
+      author: Josh Bowling
+      nested: []
+  version: 4.0.0
+  title: "'Drop jellyfish-environment, support multiple pages'"
+  date: 2022-07-09T02:44:06.129Z
+- commits:
     - subject: Add Statuspage webhook validation
       hash: c4a05aa7dd667def15b95ee9048771b0d32f8c29
       body: ""

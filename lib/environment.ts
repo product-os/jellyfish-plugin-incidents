@@ -12,16 +12,30 @@ interface Environment {
 	};
 }
 
-const pages = {};
-for (const page of (
-	process.env['INTEGRATION_STATUSPAGE_PAGES'] || 'foobar:buzbaz'
-).split(',')) {
-	const [pageId, token] = page.split(':');
-	pages[pageId] = token;
+function getPages(): Environment['statuspage']['pages'] | undefined {
+	const raw = process.env['INTEGRATION_STATUSPAGE_PAGES'];
+	if (!raw || !raw.includes(':')) {
+		return undefined;
+	}
+
+	const pages = {};
+	for (const page of raw.split(',')) {
+		const [pageId, token] = page.split(':');
+		pages[pageId] = token;
+	}
+	return pages;
 }
+
+export const defaults: Environment = {
+	statuspage: {
+		pages: {
+			foobar: 'buzbaz',
+		},
+	},
+};
 
 export const environment: Environment = {
 	statuspage: {
-		pages,
+		pages: getPages() || defaults.statuspage.pages,
 	},
 };

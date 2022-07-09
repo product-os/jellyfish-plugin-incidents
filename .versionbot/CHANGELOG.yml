@@ -1,4 +1,18 @@
 - commits:
+    - subject: Add environment unit test
+      hash: ef6603039d16364f40335563da2e677901dc317f
+      body: ""
+      footer:
+        Change-type: patch
+        change-type: patch
+        Signed-off-by: Josh Bowling <josh@balena.io>
+        signed-off-by: Josh Bowling <josh@balena.io>
+      author: Josh Bowling
+      nested: []
+  version: 4.0.1
+  title: "'Add environment unit test'"
+  date: 2022-07-09T04:27:48.646Z
+- commits:
     - subject: Drop jellyfish-environment, support multiple pages
       hash: 9a538ed54fe3a82bc9050f03b8b76a6537f139e1
       body: ""

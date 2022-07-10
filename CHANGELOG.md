@@ -4,6 +4,10 @@
 
 ## 1.0.1 - 2022-03-22
 
+## 4.0.4 - 2022-07-10
+
+* Update typedoc from 0.23.6 to 0.23.7 [renovate[bot]]
+
 ## 4.0.3 - 2022-07-09
 
 * Improve environment variable logic [Josh Bowling]

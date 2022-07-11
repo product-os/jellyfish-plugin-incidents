@@ -14,3 +14,8 @@ export type {
 	PostMortemContractDefinition,
 	PostMortemData,
 } from './post-mortem';
+export type {
+	StatuspageContract,
+	StatuspageContractDefinition,
+	StatuspageData,
+} from './statuspage';

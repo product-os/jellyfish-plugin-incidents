@@ -19,7 +19,7 @@ export const incidentsPlugin = (): PluginDefinition => {
 		requires: [
 			{
 				slug: 'plugin-default',
-				version: '>=27.x',
+				version: '>=27.9.6',
 			},
 		],
 	};

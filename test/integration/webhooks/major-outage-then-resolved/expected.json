@@ -1,8 +1,8 @@
 {
 	"head": {
-		"type": "incident@1.0.0",
+		"type": "statuspage@1.0.0",
 		"name": null,
-		"slug": "incident-48738dbf-4f10-4fb1-8093-ea320ded95cc",
+		"slug": "statuspage-foobar",
 		"active": true,
 		"loop": null,
 		"capabilities": [],
@@ -10,10 +10,12 @@
 		"tags": [],
 		"version": "1.0.0",
 		"data": {
-			"description": "Major System Outage",
-			"status": "resolved",
+			"name": "ProductOS",
+			"description": "",
+			"domain": "status.jel.ly.fish",
+			"subdomain": "productos",
 			"mirrors": [
-				"https://api.statuspage.io/v1/pages/foobar/incidents/yf8nfxmhb2jg"
+				"https://api.statuspage.io/v1/pages/foobar"
 			]
 		}
 	},
@@ -30,15 +32,17 @@
 			    "active": true,
 			    "capabilities": [],
 			    "data": {
-			    	"description": "Major System Outage",
-			    	"status": "open",
+					"name": "ProductOS",
+					"description": "",
+					"domain": "status.jel.ly.fish",
+					"subdomain": "productos",
 					"mirrors": [
-						"https://api.statuspage.io/v1/pages/j2mfxwj97wnj/incidents/lbkhbwn21v5q"
+						"https://api.statuspage.io/v1/pages/foobar"
 					]
 			    },
 			    "requires": [],
 			    "tags": [],
-			    "type": "incident@1.0.0",
+			    "type": "statuspage@1.0.0",
 			    "version": "1.0.0"
 			  },
 			  "target": "406e82f6-a2f6-40a9-8ce1-73d0720b1ec0",

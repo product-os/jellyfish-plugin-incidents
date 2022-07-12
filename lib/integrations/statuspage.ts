@@ -1,4 +1,4 @@
-import {
+import type {
 	Integration,
 	IntegrationDefinition,
 	SequenceItem,
@@ -60,51 +60,114 @@ export class StatuspageIntegration implements Integration {
 			return [];
 		}
 
-		// Validate webhook incident ID and status
-		const remoteIncident = await axios({
-			method: 'GET',
-			url: `${STATUSPAGE_ENDPOINT}/pages/${payload.page.id}/incidents/${payload.incident.id}`,
-			headers: {
-				Authorization: `OAuth ${environment.statuspage.pages[payload.page.id]}`,
-			},
-		});
-		if (
-			remoteIncident.status !== 200 ||
-			remoteIncident.data.status !== payload.incident.status
-		) {
-			this.context.log.warn('Statuspage incident status mismatch', {
-				pageId: payload.page.id,
-				incidentId: payload.incident.id,
-				remoteStatus: remoteIncident.data.status,
-				webhookStatus: payload.incident.status,
-			});
-			return [];
-		}
-
-		// Upsert incident contract
-		const status = statusOptions.includes(payload.incident.status)
-			? payload.incident.status
-			: 'open';
-		const mirrorId = `${STATUSPAGE_ENDPOINT}/pages/${payload.page.id}/incidents/${payload.incident.id}`;
-		const incident = await this.context.getElementByMirrorId(
-			'incident@1.0.0',
-			mirrorId,
+		// Get statuspage contract
+		const sequence: SequenceItem[] = [];
+		const statuspageMirrorId = `${STATUSPAGE_ENDPOINT}/pages/${payload.page.id}`;
+		const statuspage = await this.context.getElementByMirrorId(
+			'statuspage@1.0.0',
+			statuspageMirrorId,
 		);
-		if (incident) {
-			incident.data.status = status;
-			return [
-				{
+
+		// Add statuspage contract to sequence if it doesn't exist
+		if (!statuspage) {
+			try {
+				const remoteStatuspage = await axios({
+					method: 'GET',
+					url: `${STATUSPAGE_ENDPOINT}/pages/${payload.page.id}`,
+					headers: {
+						Authorization: `OAuth ${
+							environment.statuspage.pages[payload.page.id]
+						}`,
+					},
+				});
+				sequence.push({
 					time: new Date(),
 					actor: await this.context.getActorId({
 						handle: this.options.defaultUser,
 					}),
-					card: incident,
-				},
-			];
+					card: {
+						type: 'statuspage@1.0.0',
+						slug: `statuspage-${payload.page.id}`,
+						data: {
+							name: remoteStatuspage.data.name || '',
+							description: remoteStatuspage.data.page_description || '',
+							domain: remoteStatuspage.data.domain || '',
+							subdomain: remoteStatuspage.data.subdomain || '',
+							mirrors: [statuspageMirrorId],
+						},
+					},
+				});
+			} catch (error: any) {
+				this.context.log.warn('Failed to get Statuspage details', {
+					pageId: payload.page.id,
+					incidentId: payload.incident.id,
+					error: {
+						code: error.code,
+						message: error.data.message,
+						status: error.response.status,
+						statusText: error.response.statusText,
+					},
+				});
+				return [];
+			}
 		}
 
-		return [
-			{
+		// Validate webhook incident ID and status
+		try {
+			const response = await axios({
+				method: 'GET',
+				url: `${STATUSPAGE_ENDPOINT}/pages/${payload.page.id}/incidents/${payload.incident.id}`,
+				headers: {
+					Authorization: `OAuth ${
+						environment.statuspage.pages[payload.page.id]
+					}`,
+				},
+			});
+			if (response.data.status !== payload.incident.status) {
+				this.context.log.warn('Statuspage incident status mismatch', {
+					pageId: payload.page.id,
+					incidentId: payload.incident.id,
+					remoteStatus: response.data.status,
+					webhookStatus: payload.incident.status,
+				});
+				return [];
+			}
+		} catch (error: any) {
+			this.context.log.warn('Failed to get Statuspage incident details', {
+				pageId: payload.page.id,
+				incidentId: payload.incident.id,
+				error: {
+					code: error.code,
+					message: error.data.message,
+					status: error.response.status,
+					statusText: error.response.statusText,
+				},
+			});
+			return [];
+		}
+
+		const status = statusOptions.includes(payload.incident.status)
+			? payload.incident.status
+			: 'open';
+		const incidentMirrorId = `${STATUSPAGE_ENDPOINT}/pages/${payload.page.id}/incidents/${payload.incident.id}`;
+		const incident = await this.context.getElementByMirrorId(
+			'incident@1.0.0',
+			incidentMirrorId,
+		);
+		if (incident) {
+			// Add updated incident to sequence
+			incident.data.status = status;
+			sequence.push({
+				time: new Date(),
+				actor: await this.context.getActorId({
+					handle: this.options.defaultUser,
+				}),
+				card: incident,
+			});
+		} else {
+			// Add new incident to sequence
+			const incidentSlug = `incident-${uuidv4()}`;
+			sequence.push({
 				time: new Date(),
 				actor: await this.context.getActorId({
 					handle: this.options.defaultUser,
@@ -115,11 +178,47 @@ export class StatuspageIntegration implements Integration {
 					data: {
 						description: payload.page.status_description,
 						status,
-						mirrors: [mirrorId],
+						mirrors: [incidentMirrorId],
 					},
 				},
-			},
-		];
+			});
+
+			// Add link to sequence
+			sequence.push({
+				time: new Date(),
+				actor: await this.context.getActorId({
+					handle: this.options.defaultUser,
+				}),
+				card: {
+					type: 'link@1.0.0',
+					slug: `link-statuspage-${payload.page.id}-has-attached-${incidentSlug}`,
+					name: 'has attached',
+					data: {
+						inverseName: 'is attached to',
+						from: {
+							id: statuspage
+								? statuspage.id
+								: {
+										$eval: 'cards[0].id',
+								  },
+							type: 'statuspage@1.0.0',
+						},
+						to: {
+							id: statuspage
+								? {
+										$eval: 'cards[0].id',
+								  }
+								: {
+										$eval: 'cards[1].id',
+								  },
+							type: 'incident@1.0.0',
+						},
+					},
+				},
+			});
+		}
+
+		return sequence;
 	}
 }
 

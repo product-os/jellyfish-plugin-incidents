@@ -1,4 +1,18 @@
 - commits:
+    - subject: Add statuspage type contract
+      hash: 0a9aab147d970c8513824cd797ad5e5197c96845
+      body: ""
+      footer:
+        Change-type: minor
+        change-type: minor
+        Signed-off-by: Josh Bowling <josh@balena.io>
+        signed-off-by: Josh Bowling <josh@balena.io>
+      author: Josh Bowling
+      nested: []
+  version: 4.1.0
+  title: "'Add statuspage type contract'"
+  date: 2022-07-12T06:00:29.435Z
+- commits:
     - subject: Update typedoc from 0.23.6 to 0.23.7
       hash: d0e0333bd46b64f9503d05af679800ecede390b5
       body: ""

@@ -4,6 +4,10 @@
 
 ## 1.0.1 - 2022-03-22
 
+## 4.1.0 - 2022-07-12
+
+* Add statuspage type contract [Josh Bowling]
+
 ## 4.0.4 - 2022-07-10
 
 * Update typedoc from 0.23.6 to 0.23.7 [renovate[bot]]

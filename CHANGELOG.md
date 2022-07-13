@@ -4,6 +4,10 @@
 
 ## 1.0.1 - 2022-03-22
 
+## 4.1.1 - 2022-07-13
+
+* Update @balena/jellyfish-plugin-default from 27.9.6 to 27.10.0 [renovate[bot]]
+
 ## 4.1.0 - 2022-07-12
 
 * Add statuspage type contract [Josh Bowling]

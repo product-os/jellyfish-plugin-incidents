@@ -1,4 +1,16 @@
 - commits:
+    - subject: Update @balena/jellyfish-plugin-default from 27.9.6 to 27.10.0
+      hash: 45519ea28986ecf861f4792caf7c24b152decad1
+      body: ""
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: renovate[bot]
+      nested: []
+  version: 4.1.1
+  title: "'Update @balena/jellyfish-plugin-default from 27.9.6 to 27.10.0'"
+  date: 2022-07-13T15:56:14.904Z
+- commits:
     - subject: Add statuspage type contract
       hash: 0a9aab147d970c8513824cd797ad5e5197c96845
       body: ""

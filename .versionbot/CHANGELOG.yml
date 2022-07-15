@@ -1,4 +1,18 @@
 - commits:
+    - subject: Drop plugin-product-os
+      hash: b6c3c52770c35eb502e174c2e814771f2d3f247c
+      body: ""
+      footer:
+        Change-type: patch
+        change-type: patch
+        Signed-off-by: Josh Bowling <josh@balena.io>
+        signed-off-by: Josh Bowling <josh@balena.io>
+      author: Josh Bowling
+      nested: []
+  version: 4.1.4
+  title: "'Drop plugin-product-os'"
+  date: 2022-07-15T05:57:25.554Z
+- commits:
     - subject: Update @balena/jellyfish-plugin-product-os from 7.1.0 to 8.0.0
       hash: c7e2d497615ec4209377201c1d500929423e87c7
       body: ""

@@ -4,6 +4,10 @@
 
 ## 1.0.1 - 2022-03-22
 
+## 4.1.4 - 2022-07-15
+
+* Drop plugin-product-os [Josh Bowling]
+
 ## 4.1.3 - 2022-07-15
 
 * Update @balena/jellyfish-plugin-product-os from 7.1.0 to 8.0.0 [renovate[bot]]

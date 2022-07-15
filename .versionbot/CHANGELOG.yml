@@ -1,4 +1,16 @@
 - commits:
+    - subject: Update @balena/jellyfish-worker from 31.2.0 to 31.4.0
+      hash: 01207f4240fea1b36be795b2f1b87f8dca40bb87
+      body: ""
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: renovate[bot]
+      nested: []
+  version: 4.1.5
+  title: "'Update @balena/jellyfish-worker from 31.2.0 to 31.4.0'"
+  date: 2022-07-15T18:10:09.238Z
+- commits:
     - subject: Drop plugin-product-os
       hash: b6c3c52770c35eb502e174c2e814771f2d3f247c
       body: ""

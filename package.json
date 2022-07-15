@@ -52,7 +52,7 @@
   "license": "AGPL-3.0",
   "devDependencies": {
     "@balena/jellyfish-plugin-default": "^27.10.0",
-    "@balena/jellyfish-plugin-product-os": "^7.1.0",
+    "@balena/jellyfish-plugin-product-os": "^8.0.0",
     "@balena/jellyfish-worker": "^31.1.0",
     "@balena/lint": "^6.2.0",
     "@types/jest": "^28.1.2",

@@ -1,4 +1,21 @@
 - commits:
+    - subject: Upgrade to latest worker v32.x
+      hash: dd6d2cd80eb1c9f452fa75ae19ac4362bed2a767
+      body: |
+        This change brings in a major change to how AutumnDB handles sessions.
+
+        See https://github.com/product-os/autumndb/pull/1363
+      footer:
+        Change-type: major
+        change-type: major
+        Signed-off-by: Lucian Buzzo <lucian.buzzo@gmail.com>
+        signed-off-by: Lucian Buzzo <lucian.buzzo@gmail.com>
+      author: Lucian Buzzo
+      nested: []
+  version: 5.0.0
+  title: "'Upgrade to latest worker v32.x'"
+  date: 2022-07-19T19:34:54.365Z
+- commits:
     - subject: Update @balena/jellyfish-worker from 31.5.0 to 32.0.0
       hash: de914e13d835d851ac4f9bb29a82c1b1c459169e
       body: ""

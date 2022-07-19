@@ -16,11 +16,5 @@ export const incidentsPlugin = (): PluginDefinition => {
 		version,
 		contracts,
 		integrationMap: integrations,
-		requires: [
-			{
-				slug: 'plugin-default',
-				version: '>=27.9.6',
-			},
-		],
 	};
 };

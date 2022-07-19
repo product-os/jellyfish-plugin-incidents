@@ -1,4 +1,16 @@
 - commits:
+    - subject: Update autumndb from 20.3.2 to 21.0.0
+      hash: 864192ba7230363db676945c3e092ac88b012641
+      body: ""
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: renovate[bot]
+      nested: []
+  version: 4.1.8
+  title: "'Update autumndb from 20.3.2 to 21.0.0'"
+  date: 2022-07-19T15:21:25.649Z
+- commits:
     - subject: Drop plugin-default
       hash: ed543d68b80a108a4a43e43f9dbaa99ce91eda5c
       body: ""

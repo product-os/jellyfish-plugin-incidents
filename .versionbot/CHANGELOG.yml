@@ -1,4 +1,20 @@
 - commits:
+    - subject: Import incidents using an action
+      hash: 15f56ea85514495eb9e66edb55e94cb54b2a1345
+      body: |
+        Replace integration with triggered-action and action combination to
+        import statuspage and incident contracts when triggered by webhooks
+      footer:
+        Change-type: major
+        change-type: major
+        Signed-off-by: Josh Bowling <josh@balena.io>
+        signed-off-by: Josh Bowling <josh@balena.io>
+      author: Josh Bowling
+      nested: []
+  version: 6.0.0
+  title: "'Import incidents using an action'"
+  date: 2022-07-21T07:15:10.137Z
+- commits:
     - subject: Update to worker 32.0.1
       hash: 988cce2573a39ceeb199fb2de67214c124c054f9
       body: ""

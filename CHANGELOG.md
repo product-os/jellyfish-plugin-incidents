@@ -4,6 +4,10 @@
 
 ## 1.0.1 - 2022-03-22
 
+## 6.0.0 - 2022-07-21
+
+* Import incidents using an action [Josh Bowling]
+
 ## 5.0.3 - 2022-07-21
 
 * Update to worker 32.0.1 [Josh Bowling]

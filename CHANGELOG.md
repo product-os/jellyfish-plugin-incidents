@@ -4,6 +4,10 @@
 
 ## 1.0.1 - 2022-03-22
 
+## 5.0.2 - 2022-07-21
+
+* Use jellyfish-environment [Josh Bowling]
+
 ## 5.0.1 - 2022-07-20
 
 * Update autumndb from 21.0.0 to 21.1.1 [renovate[bot]]

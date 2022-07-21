@@ -1,4 +1,18 @@
 - commits:
+    - subject: Use jellyfish-environment
+      hash: 604716b4aa766b4caa3dad302da4130d5ec945cd
+      body: ""
+      footer:
+        Change-type: patch
+        change-type: patch
+        Signed-off-by: Josh Bowling <josh@balena.io>
+        signed-off-by: Josh Bowling <josh@balena.io>
+      author: Josh Bowling
+      nested: []
+  version: 5.0.2
+  title: "'Use jellyfish-environment'"
+  date: 2022-07-21T03:23:37.147Z
+- commits:
     - subject: Update autumndb from 21.0.0 to 21.1.1
       hash: d51b6bb437e52fcb7c64ef3c1a248e79bf6b4028
       body: ""

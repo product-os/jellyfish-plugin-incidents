@@ -6,6 +6,7 @@ import { postMortem } from './post-mortem';
 import { relationshipIncidentIsAttachedToStatuspage } from './relationship-incident-is-attached-to-statuspage';
 import { relationshipPostMortemIsAttachedToIncident } from './relationship-post-mortem-is-attached-to-incident';
 import { statuspage } from './statuspage';
+import { triggeredActionIntegrationStatuspageImportIncident } from './triggered-action-integration-statuspage-import-incident';
 
 export const contracts: ContractDefinition[] = [
 	channelIncidents,
@@ -15,4 +16,5 @@ export const contracts: ContractDefinition[] = [
 	relationshipIncidentIsAttachedToStatuspage,
 	relationshipPostMortemIsAttachedToIncident,
 	statuspage,
+	triggeredActionIntegrationStatuspageImportIncident,
 ];

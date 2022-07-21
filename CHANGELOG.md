@@ -4,6 +4,10 @@
 
 ## 1.0.1 - 2022-03-22
 
+## 5.0.3 - 2022-07-21
+
+* Update to worker 32.0.1 [Josh Bowling]
+
 ## 5.0.2 - 2022-07-21
 
 * Use jellyfish-environment [Josh Bowling]

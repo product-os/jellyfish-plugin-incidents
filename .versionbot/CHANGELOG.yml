@@ -1,4 +1,18 @@
 - commits:
+    - subject: Update to worker 32.0.1
+      hash: 988cce2573a39ceeb199fb2de67214c124c054f9
+      body: ""
+      footer:
+        Change-type: patch
+        change-type: patch
+        Signed-off-by: Josh Bowling <josh@balena.io>
+        signed-off-by: Josh Bowling <josh@balena.io>
+      author: Josh Bowling
+      nested: []
+  version: 5.0.3
+  title: "'Update to worker 32.0.1'"
+  date: 2022-07-21T04:10:19.289Z
+- commits:
     - subject: Use jellyfish-environment
       hash: 604716b4aa766b4caa3dad302da4130d5ec945cd
       body: ""

@@ -1,3 +1,4 @@
+import { defaultEnvironment } from '@balena/jellyfish-environment';
 import type {
 	Integration,
 	IntegrationDefinition,
@@ -8,7 +9,6 @@ import axios from 'axios';
 import _ from 'lodash';
 import * as skhema from 'skhema';
 import { v4 as uuidv4 } from 'uuid';
-import { environment } from '../environment';
 import { statusOptions } from '../contracts/incident';
 
 const SLUG = 'statuspage';
@@ -53,7 +53,7 @@ export class StatuspageIntegration implements Integration {
 	public async translate(event: Contract): Promise<SequenceItem[]> {
 		// Validate webhook Statuspage page ID
 		const payload = event.data.payload as IncidentUpdatePayload;
-		if (!environment.statuspage.pages[payload.page.id]) {
+		if (!defaultEnvironment.integration.statuspage.pages[payload.page.id]) {
 			this.context.log.warn('Webhook from unknown Statuspage', {
 				pageId: payload.page.id,
 			});
@@ -76,7 +76,7 @@ export class StatuspageIntegration implements Integration {
 					url: `${STATUSPAGE_ENDPOINT}/pages/${payload.page.id}`,
 					headers: {
 						Authorization: `OAuth ${
-							environment.statuspage.pages[payload.page.id]
+							defaultEnvironment.integration.statuspage.pages[payload.page.id]
 						}`,
 					},
 				});
@@ -119,7 +119,7 @@ export class StatuspageIntegration implements Integration {
 				url: `${STATUSPAGE_ENDPOINT}/pages/${payload.page.id}/incidents/${payload.incident.id}`,
 				headers: {
 					Authorization: `OAuth ${
-						environment.statuspage.pages[payload.page.id]
+						defaultEnvironment.integration.statuspage.pages[payload.page.id]
 					}`,
 				},
 			});

@@ -4,6 +4,10 @@
 
 ## 1.0.1 - 2022-03-22
 
+## 6.1.1 - 2022-07-22
+
+* Simplify incident and post-mortem contracts [Josh Bowling]
+
 ## 6.1.0 - 2022-07-22
 
 * Bring back integration definition [Josh Bowling]

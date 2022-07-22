@@ -1,4 +1,18 @@
 - commits:
+    - subject: Simplify incident and post-mortem contracts
+      hash: cb368d3e97dfe07ce976d826c0c37ebceafb44c3
+      body: ""
+      footer:
+        Change-type: patch
+        change-type: patch
+        Signed-off-by: Josh Bowling <josh@balena.io>
+        signed-off-by: Josh Bowling <josh@balena.io>
+      author: Josh Bowling
+      nested: []
+  version: 6.1.1
+  title: "'Simplify incident and post-mortem contracts'"
+  date: 2022-07-22T05:44:32.832Z
+- commits:
     - subject: Bring back integration definition
       hash: 6a767aeda199e2a5c0d3bb94db180f599c5a76d5
       body: ""

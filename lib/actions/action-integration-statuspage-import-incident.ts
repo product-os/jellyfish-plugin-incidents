@@ -3,6 +3,7 @@ import type { ActionDefinition, WorkerContext } from '@balena/jellyfish-worker';
 import { getLogger } from '@balena/jellyfish-logger';
 import type { TypeContract } from 'autumndb';
 import axios from 'axios';
+import type { Operation } from 'fast-json-patch';
 import _ from 'lodash';
 import { v4 as uuidv4 } from 'uuid';
 import { statusOptions } from '../contracts/incident';
@@ -54,6 +55,8 @@ interface IncidentUpdatePayload {
 	incident: {
 		status: string;
 		id: string;
+		impact: string;
+		name: string;
 		[k: string]: string;
 	};
 	[k: string]: unknown;
@@ -149,12 +152,20 @@ const handler: ActionDefinition['handler'] = async (
 				}`,
 			},
 		});
-		if (response.data.status !== payload.incident.status) {
-			logger.warn(request.logContext, 'Statuspage incident status mismatch', {
+		if (
+			response.data.status !== payload.incident.status ||
+			response.data.impact !== payload.incident.impact ||
+			response.data.name !== payload.incident.name
+		) {
+			logger.warn(request.logContext, 'Statuspage incident mismatch', {
 				pageId: payload.page.id,
 				incidentId: payload.incident.id,
 				remoteStatus: response.data.status,
 				webhookStatus: payload.incident.status,
+				remoteImpact: response.data.impact,
+				webhookImpact: payload.incident.impact,
+				remoteName: response.data.name,
+				webhookName: payload.incident.name,
 			});
 			return {
 				id: contract.id,
@@ -197,6 +208,28 @@ const handler: ActionDefinition['handler'] = async (
 		incidentMirrorId,
 	)) as IncidentContract;
 	if (incident) {
+		const patch: Operation[] = [];
+		if (incident.data.status !== status) {
+			patch.push({
+				op: 'replace',
+				path: '/data/status',
+				value: status,
+			});
+		}
+		if (incident.data.impact !== payload.incident.impact) {
+			patch.push({
+				op: 'replace',
+				path: '/data/impact',
+				value: payload.incident.impact,
+			});
+		}
+		if (incident.name !== payload.incident.name) {
+			patch.push({
+				op: 'replace',
+				path: '/name',
+				value: payload.incident.name,
+			});
+		}
 		await context.patchCard(
 			session,
 			context.cards['incident@1.0.0'] as TypeContract,
@@ -206,16 +239,10 @@ const handler: ActionDefinition['handler'] = async (
 				actor: request.actor,
 			},
 			incident,
-			[
-				{
-					path: '/data/status',
-					op: 'replace',
-					value: status,
-				},
-			],
+			patch,
 		);
 	} else {
-		// Add new incident to sequence
+		// Create new incident
 		const incidentSlug = `incident-${uuidv4()}`;
 		incident = (await context.insertCard(
 			session,
@@ -226,11 +253,13 @@ const handler: ActionDefinition['handler'] = async (
 				actor: request.actor,
 			},
 			{
+				name: payload.incident.name || '',
 				slug: `incident-${uuidv4()}`,
 				data: {
 					description: payload.page.status_description,
 					status,
 					mirrors: [incidentMirrorId],
+					impact: payload.incident.impact,
 				},
 			},
 		)) as IncidentContract;

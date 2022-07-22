@@ -8,5 +8,4 @@ test('Expected contracts are loaded', () => {
 	expect(contracts['incident'].name).toEqual('Incident');
 	expect(contracts['channel-incidents'].name).toEqual('Incidents');
 	expect(contracts['post-mortem'].name).toEqual('Post-mortem');
-	expect(contracts['channel-post-mortems'].name).toEqual('Post-mortems');
 });

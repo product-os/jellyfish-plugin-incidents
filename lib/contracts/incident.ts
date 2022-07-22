@@ -38,6 +38,10 @@ export const incident: ContractDefinition = contractMixins.mixin(
 							type: 'string',
 							fullTextSearch: true,
 						},
+						impact: {
+							title: 'Impact',
+							type: 'string',
+						},
 						mirrors: {
 							type: 'array',
 							items: {

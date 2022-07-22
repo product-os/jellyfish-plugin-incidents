@@ -38,6 +38,8 @@ describe('action-integration-statuspage-import-incident', () => {
 			.reply(200, {
 				id: 'yf8nfxmhb2jg',
 				status: 'major_outage',
+				impact: 'major',
+				name: 'ProductOS outage',
 			});
 
 		await ctx.worker.insertCard(
@@ -63,6 +65,8 @@ describe('action-integration-statuspage-import-incident', () => {
 						incident: {
 							id: 'yf8nfxmhb2jg',
 							status: 'major_outage',
+							impact: 'major',
+							name: 'ProductOS outage',
 						},
 					},
 				},
@@ -108,10 +112,13 @@ describe('action-integration-statuspage-import-incident', () => {
 		// Assert the incident contract was created
 		const incident = await ctx.waitForMatch({
 			type: 'object',
-			required: ['type', 'data'],
+			required: ['type', 'name', 'data'],
 			properties: {
 				type: {
 					const: 'incident@1.0.0',
+				},
+				name: {
+					const: 'ProductOS outage',
 				},
 				data: {
 					type: 'object',
@@ -122,6 +129,9 @@ describe('action-integration-statuspage-import-incident', () => {
 						},
 						description: {
 							const: 'Major System Outage',
+						},
+						impact: {
+							const: 'major',
 						},
 						mirrors: {
 							type: 'array',
@@ -149,6 +159,8 @@ describe('action-integration-statuspage-import-incident', () => {
 			.reply(200, {
 				id: 'yf8nfxmhb2jg',
 				status: 'resolved',
+				impact: 'minor',
+				name: 'ProductOS outage',
 			});
 
 		await ctx.worker.insertCard(
@@ -174,6 +186,8 @@ describe('action-integration-statuspage-import-incident', () => {
 						incident: {
 							id: 'yf8nfxmhb2jg',
 							status: 'resolved',
+							impact: 'minor',
+							name: 'ProductOS outage',
 						},
 					},
 				},
@@ -189,5 +203,6 @@ describe('action-integration-statuspage-import-incident', () => {
 		);
 		assert(updated);
 		expect(updated.data.status).toEqual('resolved');
+		expect(updated.data.impact).toEqual('minor');
 	});
 });

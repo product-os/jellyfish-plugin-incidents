@@ -31,12 +31,10 @@ export const incident: ContractDefinition = contractMixins.mixin(
 						service: {
 							title: 'Title',
 							type: 'string',
-							fullTextSearch: true,
 						},
 						description: {
 							title: 'Description',
 							type: 'string',
-							fullTextSearch: true,
 						},
 						impact: {
 							title: 'Impact',
@@ -47,32 +45,10 @@ export const incident: ContractDefinition = contractMixins.mixin(
 							items: {
 								type: 'string',
 							},
-							fullTextSearch: true,
 						},
 					},
 				},
 			},
 		},
-		uiSchema: {
-			fields: {
-				data: {
-					'ui:order': ['status', 'title', 'description', '*'],
-				},
-			},
-			edit: {
-				$ref: '#/data/uiSchema/definitions/form',
-			},
-			create: {
-				$ref: '#/data/uiSchema/edit',
-			},
-			definitions: {
-				form: {
-					data: {
-						'ui:order': ['status', 'title', 'description', '*'],
-					},
-				},
-			},
-		},
-		indexed_fields: [['data.status']],
 	},
 });

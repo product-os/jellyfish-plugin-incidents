@@ -19,33 +19,11 @@ export const postMortem: ContractDefinition = {
 						title: {
 							title: 'Title',
 							type: ['string', 'null'],
-							fullTextSearch: true,
 						},
 						details: {
 							title: 'Details',
 							type: 'string',
-							fullTextSearch: true,
 						},
-					},
-				},
-			},
-		},
-		uiSchema: {
-			fields: {
-				data: {
-					'ui:order': ['title', 'details', '*'],
-				},
-			},
-			edit: {
-				$ref: '#/data/uiSchema/definitions/form',
-			},
-			create: {
-				$ref: '#/data/uiSchema/edit',
-			},
-			definitions: {
-				form: {
-					data: {
-						'ui:order': ['title', 'details', '*'],
 					},
 				},
 			},

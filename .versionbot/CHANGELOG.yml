@@ -1,4 +1,18 @@
 - commits:
+    - subject: Bring back integration definition
+      hash: 6a767aeda199e2a5c0d3bb94db180f599c5a76d5
+      body: ""
+      footer:
+        Change-type: minor
+        change-type: minor
+        Signed-off-by: Josh Bowling <josh@balena.io>
+        signed-off-by: Josh Bowling <josh@balena.io>
+      author: Josh Bowling
+      nested: []
+  version: 6.1.0
+  title: "'Bring back integration definition'"
+  date: 2022-07-22T02:59:57.084Z
+- commits:
     - subject: Import incidents using an action
       hash: 15f56ea85514495eb9e66edb55e94cb54b2a1345
       body: |

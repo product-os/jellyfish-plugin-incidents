@@ -4,6 +4,10 @@
 
 ## 1.0.1 - 2022-03-22
 
+## 6.1.0 - 2022-07-22
+
+* Bring back integration definition [Josh Bowling]
+
 ## 6.0.0 - 2022-07-21
 
 * Import incidents using an action [Josh Bowling]

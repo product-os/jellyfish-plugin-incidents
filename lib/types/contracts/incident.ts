@@ -8,9 +8,6 @@
 
 import type { Contract, ContractDefinition } from 'autumndb';
 
-export type Title = string;
-export type Description = string;
-export type Impact = string;
 export type Status =
 	| 'open'
 	| 'investigating'
@@ -18,18 +15,14 @@ export type Status =
 	| 'monitoring'
 	| 'resolved'
 	| 'archived';
+export type Description = string;
+export type Impact = string;
 
 export interface IncidentData {
-	service?: Title;
+	status?: Status;
 	description?: Description;
 	impact?: Impact;
 	mirrors?: string[];
-	participants?: unknown[];
-	mentionsUser?: unknown[];
-	alertsUser?: unknown[];
-	mentionsGroup?: unknown[];
-	alertsGroup?: unknown[];
-	status: Status;
 	[k: string]: unknown;
 }
 

@@ -1,8 +1,6 @@
-import { contractMixins } from '@balena/jellyfish-worker';
 import type { ContractDefinition } from 'autumndb';
+import _ from 'lodash';
 
-const slug = 'incident';
-const type = 'type@1.0.0';
 export const statusOptions = [
 	'open',
 	'investigating',
@@ -12,13 +10,10 @@ export const statusOptions = [
 	'archived',
 ];
 
-export const incident: ContractDefinition = contractMixins.mixin(
-	contractMixins.withEvents(slug, type),
-	contractMixins.asPipelineItem(slug, type, statusOptions),
-)({
-	slug,
+export const incident: ContractDefinition = {
+	slug: 'incident',
 	name: 'Incident',
-	type,
+	type: 'type@1.0.0',
 	markers: [],
 	data: {
 		schema: {
@@ -28,9 +23,12 @@ export const incident: ContractDefinition = contractMixins.mixin(
 				data: {
 					type: 'object',
 					properties: {
-						service: {
-							title: 'Title',
+						status: {
+							title: 'Status',
 							type: 'string',
+							default: statusOptions[0],
+							enum: statusOptions,
+							enumNames: statusOptions.map(_.startCase),
 						},
 						description: {
 							title: 'Description',
@@ -51,4 +49,4 @@ export const incident: ContractDefinition = contractMixins.mixin(
 			},
 		},
 	},
-});
+};

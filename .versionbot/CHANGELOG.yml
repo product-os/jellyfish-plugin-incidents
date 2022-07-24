@@ -1,4 +1,18 @@
 - commits:
+    - subject: Enable webhook handler
+      hash: 3ef7d2b14ea61879bc38086e59cc4e913371002e
+      body: ""
+      footer:
+        Change-type: minor
+        change-type: minor
+        Signed-off-by: Josh Bowling <josh@monarci.com>
+        signed-off-by: Josh Bowling <josh@monarci.com>
+      author: Josh Bowling
+      nested: []
+  version: 7.1.0
+  title: "'Enable webhook handler'"
+  date: 2022-07-24T00:48:16.250Z
+- commits:
     - subject: Temporarily simplify plugin for deployment
       hash: cd446e1b10d84de4b65897450d60a1c4043d611b
       body: ""

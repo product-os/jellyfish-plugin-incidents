@@ -4,6 +4,10 @@
 
 ## 1.0.1 - 2022-03-22
 
+## 7.1.0 - 2022-07-24
+
+* Enable webhook handler [Josh Bowling]
+
 ## 7.0.0 - 2022-07-24
 
 * Temporarily simplify plugin for deployment [Josh Bowling]

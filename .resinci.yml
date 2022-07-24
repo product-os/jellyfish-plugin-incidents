@@ -1,3 +1,12 @@
+docker:
+  publish: false
+  builds:
+    - path: .
+      dockerfile: Dockerfile
+      docker_repo: balena/jellyfish-sut
+      publish: false
+      args:
+        - BUILDKIT_INLINE_CACHE=1
 npm:
   platforms:
     - name: linux

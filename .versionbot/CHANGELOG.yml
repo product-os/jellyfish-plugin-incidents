@@ -1,4 +1,18 @@
 - commits:
+    - subject: Temporarily simplify plugin for deployment
+      hash: cd446e1b10d84de4b65897450d60a1c4043d611b
+      body: ""
+      footer:
+        Change-type: major
+        change-type: major
+        Signed-off-by: Josh Bowling <josh@monarci.com>
+        signed-off-by: Josh Bowling <josh@monarci.com>
+      author: Josh Bowling
+      nested: []
+  version: 7.0.0
+  title: "'Temporarily simplify plugin for deployment'"
+  date: 2022-07-24T00:18:52.953Z
+- commits:
     - subject: Simplify incident and post-mortem contracts
       hash: cb368d3e97dfe07ce976d826c0c37ebceafb44c3
       body: ""

@@ -4,6 +4,10 @@
 
 ## 1.0.1 - 2022-03-22
 
+## 7.2.0 - 2022-07-28
+
+* Create ping message on new incident [Josh Bowling]
+
 ## 7.1.3 - 2022-07-25
 
 * Update autumndb from 21.1.4 to 21.2.0 [renovate[bot]]

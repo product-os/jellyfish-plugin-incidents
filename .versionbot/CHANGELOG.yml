@@ -1,4 +1,18 @@
 - commits:
+    - subject: Create ping message on new incident
+      hash: 9acb94b8d2fe6b19ed63986cdf729b3cb3c1c231
+      body: ""
+      footer:
+        Change-type: minor
+        change-type: minor
+        Signed-off-by: Josh Bowling <josh@monarci.com>
+        signed-off-by: Josh Bowling <josh@monarci.com>
+      author: Josh Bowling
+      nested: []
+  version: 7.2.0
+  title: "'Create ping message on new incident'"
+  date: 2022-07-28T06:03:34.573Z
+- commits:
     - subject: Update autumndb from 21.1.4 to 21.2.0
       hash: 6a571925381e8c5d65fdf8ccd3f40953d1143581
       body: ""

@@ -145,6 +145,46 @@ describe('action-integration-statuspage-import-incident', () => {
 			},
 		});
 
+		// Assert the ping message was created
+		await ctx.waitForMatch({
+			type: 'object',
+			required: ['type', 'data'],
+			properties: {
+				type: {
+					const: 'message@1.0.0',
+				},
+				data: {
+					type: 'object',
+					required: ['payload'],
+					properties: {
+						payload: {
+							type: 'object',
+							required: ['message'],
+							properties: {
+								message: {
+									const: '@@reliability New incident from Statuspage',
+								},
+							},
+						},
+					},
+				},
+			},
+			$$links: {
+				'is attached to': {
+					type: 'object',
+					required: ['type', 'id'],
+					properties: {
+						type: {
+							const: 'incident@1.0.0',
+						},
+						id: {
+							const: incident.id,
+						},
+					},
+				},
+			},
+		});
+
 		// Simulate incident resolution update
 		nock(STATUSPAGE_ENDPOINT)
 			.get('/pages/foobar')

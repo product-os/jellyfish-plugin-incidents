@@ -288,6 +288,36 @@ const handler: ActionDefinition['handler'] = async (
 				},
 			},
 		);
+
+		// Add message with ping to incident timeline
+		await context.insertCard(
+			session,
+			context.cards['action-request@1.0.0'] as TypeContract,
+			{
+				timestamp: request.timestamp,
+				attachEvents: false,
+			},
+			{
+				data: {
+					actor: request.actor,
+					context: request.logContext,
+					action: 'action-create-event@1.0.0',
+					card: incident.id,
+					type: incident.type,
+					epoch: new Date().valueOf(),
+					timestamp: request.timestamp,
+					input: {
+						id: incident.id,
+					},
+					arguments: {
+						type: 'message',
+						payload: {
+							message: '@@reliability New incident from Statuspage',
+						},
+					},
+				},
+			},
+		);
 	}
 
 	return {

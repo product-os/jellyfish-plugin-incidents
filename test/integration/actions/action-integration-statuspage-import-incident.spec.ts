@@ -6,11 +6,13 @@ import { IncidentContract, incidentsPlugin } from '../../../lib';
 import { STATUSPAGE_ENDPOINT } from '../../../lib/actions/action-integration-statuspage-import-incident';
 
 let ctx: testUtils.TestContext;
+let hubotUser: any;
 
 beforeAll(async () => {
 	ctx = await testUtils.newContext({
 		plugins: [incidentsPlugin()],
 	});
+	hubotUser = await ctx.createUser('hubot');
 	nock.cleanAll();
 });
 
@@ -155,8 +157,11 @@ describe('action-integration-statuspage-import-incident', () => {
 				},
 				data: {
 					type: 'object',
-					required: ['payload'],
+					required: ['actor', 'payload'],
 					properties: {
+						actor: {
+							const: hubotUser.id,
+						},
 						payload: {
 							type: 'object',
 							required: ['message'],

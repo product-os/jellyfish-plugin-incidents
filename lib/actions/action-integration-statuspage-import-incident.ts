@@ -289,6 +289,16 @@ const handler: ActionDefinition['handler'] = async (
 			},
 		);
 
+		// Actor to create ping message with
+		let actor = request.actor;
+		const hubot = await context.getCardBySlug(
+			context.privilegedSession,
+			'user-hubot@1.0.0',
+		);
+		if (hubot) {
+			actor = hubot.id;
+		}
+
 		// Add message with ping to incident timeline
 		await context.insertCard(
 			session,
@@ -299,7 +309,7 @@ const handler: ActionDefinition['handler'] = async (
 			},
 			{
 				data: {
-					actor: request.actor,
+					actor,
 					context: request.logContext,
 					action: 'action-create-event@1.0.0',
 					card: incident.id,

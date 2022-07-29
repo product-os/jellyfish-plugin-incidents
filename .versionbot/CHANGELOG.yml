@@ -1,4 +1,16 @@
 - commits:
+    - subject: Update @balena/jellyfish-worker from 32.2.0 to 32.3.1
+      hash: 954cd2162f0e76a66d76c41325d551c1f9e2736e
+      body: ""
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: renovate[bot]
+      nested: []
+  version: 7.2.3
+  title: "'Update @balena/jellyfish-worker from 32.2.0 to 32.3.1'"
+  date: 2022-07-29T12:14:14.367Z
+- commits:
     - subject: Use hubot to create ping message
       hash: 7d67f6343384ed281ad365ccbead0eba7f5004d0
       body: |

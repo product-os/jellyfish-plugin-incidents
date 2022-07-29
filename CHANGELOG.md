@@ -4,6 +4,10 @@
 
 ## 1.0.1 - 2022-03-22
 
+## 7.2.3 - 2022-07-29
+
+* Update @balena/jellyfish-worker from 32.2.0 to 32.3.1 [renovate[bot]]
+
 ## 7.2.2 - 2022-07-29
 
 * Use hubot to create ping message [Josh Bowling]

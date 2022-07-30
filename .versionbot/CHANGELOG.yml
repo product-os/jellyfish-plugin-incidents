@@ -1,4 +1,18 @@
 - commits:
+    - subject: Add more tests
+      hash: edb778fe7f1fad1b0930a15341b4d1a64026b7f8
+      body: ""
+      footer:
+        Change-type: patch
+        change-type: patch
+        Signed-off-by: Josh Bowling <josh@monarci.com>
+        signed-off-by: Josh Bowling <josh@monarci.com>
+      author: Josh Bowling
+      nested: []
+  version: 7.3.2
+  title: "'Add more tests'"
+  date: 2022-07-30T05:41:21.120Z
+- commits:
     - subject: Add more docs/tests
       hash: c739a58c18fca07a895512b63727c07803abed62
       body: ""

@@ -15,7 +15,7 @@ beforeAll(async () => {
 	});
 	hubotUser = await ctx.createUser('hubot');
 	nock.cleanAll();
-}, 15000);
+});
 
 afterEach(() => {
 	nock.cleanAll();

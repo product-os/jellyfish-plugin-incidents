@@ -118,7 +118,9 @@ export function getStatus(externalStatus: string): string {
  *
  * @param payload - parsed webhook payload
  */
-async function validateIncidentWebhook(payload: UpdatePayload): Promise<void> {
+export async function validateIncidentWebhook(
+	payload: UpdatePayload,
+): Promise<void> {
 	if (!payload.incident) {
 		return;
 	}
@@ -154,7 +156,9 @@ async function validateIncidentWebhook(payload: UpdatePayload): Promise<void> {
  *
  * @param payload - parsed webhook payload
  */
-async function validateComponentWebhook(payload: UpdatePayload): Promise<void> {
+export async function validateComponentWebhook(
+	payload: UpdatePayload,
+): Promise<void> {
 	if (!payload.component) {
 		return;
 	}

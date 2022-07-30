@@ -42,34 +42,71 @@ export const statuspageIntegrationDefinition: IntegrationDefinition = {
 		if (
 			skhema.isValid(
 				{
-					type: 'object',
-					required: ['page', 'incident'],
-					properties: {
-						page: {
+					anyOf: [
+						{
 							type: 'object',
-							required: ['id', 'status_description'],
+							required: ['page', 'incident'],
 							properties: {
-								id: {
-									type: 'string',
+								page: {
+									type: 'object',
+									required: ['id', 'status_description'],
+									properties: {
+										id: {
+											type: 'string',
+										},
+										status_description: {
+											type: 'string',
+										},
+									},
 								},
-								status_description: {
-									type: 'string',
+								incident: {
+									type: 'object',
+									required: ['id', 'status'],
+									properties: {
+										id: {
+											type: 'string',
+										},
+										status: {
+											type: 'string',
+										},
+									},
 								},
 							},
 						},
-						incident: {
+						{
 							type: 'object',
-							required: ['id', 'status'],
+							required: ['page', 'component'],
 							properties: {
-								id: {
-									type: 'string',
+								page: {
+									type: 'object',
+									required: ['id', 'status_description'],
+									properties: {
+										id: {
+											type: 'string',
+										},
+										status_description: {
+											type: 'string',
+										},
+									},
 								},
-								status: {
-									type: 'string',
+								component: {
+									type: 'object',
+									required: ['id', 'name', 'status'],
+									properties: {
+										id: {
+											type: 'string',
+										},
+										name: {
+											type: 'string',
+										},
+										status: {
+											type: 'string',
+										},
+									},
 								},
 							},
 						},
-					},
+					],
 				},
 				JSON.parse(rawEvent),
 			)

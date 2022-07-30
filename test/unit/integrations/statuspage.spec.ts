@@ -34,7 +34,7 @@ describe('isEventValid()', () => {
 		expect(result).toBe(true);
 	});
 
-	test('should return false if not incident update webhook', async () => {
+	test('should return true for component update webhooks', async () => {
 		const rawEvent = JSON.stringify({
 			meta: {
 				foo: 'bar',
@@ -44,16 +44,27 @@ describe('isEventValid()', () => {
 				status_description: 'Major System Outage',
 				buz: 'baz',
 			},
-			component_update: {
-				new_status: 'operational',
-				old_status: 'major_outage',
-				id: '456',
-				buz: 'baz',
-			},
 			component: {
-				status: 'operational',
+				status: 'monitoring',
 				id: '456',
-				name: 'Some Component',
+				name: 'baz',
+			},
+		});
+
+		const result = statuspageIntegrationDefinition.isEventValid(
+			logContext,
+			{
+				api: 'xxxxx',
+			},
+			rawEvent,
+			{},
+		);
+		expect(result).toBe(true);
+	});
+
+	test('should return false if not an incident or component update webhook', async () => {
+		const rawEvent = JSON.stringify({
+			foo: {
 				buz: 'baz',
 			},
 		});

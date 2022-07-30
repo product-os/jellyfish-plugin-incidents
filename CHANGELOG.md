@@ -4,6 +4,10 @@
 
 ## 1.0.1 - 2022-03-22
 
+## 7.3.1 - 2022-07-30
+
+* Add more docs/tests [Josh Bowling]
+
 ## 7.3.0 - 2022-07-30
 
 * Handle component update webhooks [Josh Bowling]

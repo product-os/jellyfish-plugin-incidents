@@ -1,4 +1,18 @@
 - commits:
+    - subject: Add more docs/tests
+      hash: c739a58c18fca07a895512b63727c07803abed62
+      body: ""
+      footer:
+        Change-type: patch
+        change-type: patch
+        Signed-off-by: Josh Bowling <josh@monarci.com>
+        signed-off-by: Josh Bowling <josh@monarci.com>
+      author: Josh Bowling
+      nested: []
+  version: 7.3.1
+  title: "'Add more docs/tests'"
+  date: 2022-07-30T02:37:56.770Z
+- commits:
     - subject: Handle component update webhooks
       hash: 903004948cd51f7f71681b86afae7376c96fe7da
       body: |

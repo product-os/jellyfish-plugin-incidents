@@ -1,4 +1,19 @@
 - commits:
+    - subject: Handle component update webhooks
+      hash: 903004948cd51f7f71681b86afae7376c96fe7da
+      body: |
+        Create incident contracts from incoming Statuspage component webhooks
+      footer:
+        Change-type: minor
+        change-type: minor
+        Signed-off-by: Josh Bowling <josh@monarci.com>
+        signed-off-by: Josh Bowling <josh@monarci.com>
+      author: Josh Bowling
+      nested: []
+  version: 7.3.0
+  title: "'Handle component update webhooks'"
+  date: 2022-07-30T00:47:29.774Z
+- commits:
     - subject: Update @balena/jellyfish-worker from 32.2.0 to 32.3.1
       hash: 954cd2162f0e76a66d76c41325d551c1f9e2736e
       body: ""

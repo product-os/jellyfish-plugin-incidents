@@ -5,7 +5,12 @@ import type {
 	WorkerContext,
 } from '@balena/jellyfish-worker';
 import { strict as assert } from 'assert';
-import type { AutumnDBSession, ContractSummary, TypeContract } from 'autumndb';
+import type {
+	AutumnDBSession,
+	Contract,
+	ContractSummary,
+	TypeContract,
+} from 'autumndb';
 import axios, { AxiosResponse } from 'axios';
 import type { Operation } from 'fast-json-patch';
 import _ from 'lodash';
@@ -37,7 +42,19 @@ interface UpdatePayload {
 	[k: string]: unknown;
 }
 
-async function getByMirrorId(context: WorkerContext, type: string, id: string) {
+/**
+ * Attempt to get a contract using a mirror value
+ *
+ * @param context - worker context
+ * @param type - contract type
+ * @param id - mirror ID
+ * @returns contract or null
+ */
+async function getByMirrorId(
+	context: WorkerContext,
+	type: string,
+	id: string,
+): Promise<Contract | null> {
 	const [result] = await context.query(
 		context.privilegedSession,
 		{
@@ -89,7 +106,7 @@ async function httpStatuspage(
  * @param externalStatus - external incident status
  * @returns internal status string
  */
-function getStatus(externalStatus: string): string {
+export function getStatus(externalStatus: string): string {
 	if (externalStatus === 'operational') {
 		return 'resolved';
 	}
@@ -154,6 +171,15 @@ async function validateComponentWebhook(payload: UpdatePayload): Promise<void> {
 	);
 }
 
+/**
+ * Link an incident to a statuspage and add ping message to its timeline
+ *
+ * @param context - worker context
+ * @param session - execution session
+ * @param request - action handler request
+ * @param statuspage - statuspage contract
+ * @param incident - incident contract
+ */
 async function initIncident(
 	context: WorkerContext,
 	session: AutumnDBSession,

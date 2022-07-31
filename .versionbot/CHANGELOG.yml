@@ -1,4 +1,21 @@
 - commits:
+    - subject: Improve incident names
+      hash: f5e3c36e91f2619038258736666cb06cc8485baa
+      body: |
+        Use root-level name instead of data.name for statuspage contracts.
+        Include statuspage name in incident contract name.
+        Improve logic flow when creating incident contracts from webhooks.
+      footer:
+        Change-type: patch
+        change-type: patch
+        Signed-off-by: Josh Bowling <josh@monarci.com>
+        signed-off-by: Josh Bowling <josh@monarci.com>
+      author: Josh Bowling
+      nested: []
+  version: 7.3.3
+  title: "'Improve incident names'"
+  date: 2022-07-31T09:55:43.142Z
+- commits:
     - subject: Add more tests
       hash: edb778fe7f1fad1b0930a15341b4d1a64026b7f8
       body: ""

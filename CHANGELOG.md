@@ -4,6 +4,10 @@
 
 ## 1.0.1 - 2022-03-22
 
+## 7.3.4 - 2022-07-31
+
+* Update @balena/jellyfish-environment from 12.3.0 to 12.3.1 [renovate[bot]]
+
 ## 7.3.3 - 2022-07-31
 
 * Improve incident names [Josh Bowling]

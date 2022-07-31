@@ -3,8 +3,8 @@ import nock from 'nock';
 import {
 	getStatus,
 	STATUSPAGE_ENDPOINT,
-	validateComponentWebhook,
-	validateIncidentWebhook,
+	validateComponentUpdate,
+	validateIncidentUpdate,
 } from '../../../lib/actions/action-integration-statuspage-import-incident';
 
 const mock = {
@@ -42,8 +42,8 @@ describe('getStatus()', () => {
 	});
 });
 
-describe('validateComponentWebhook()', () => {
-	beforeAll(() => {
+describe('validateComponentUpdate()', () => {
+	test('should throw on invalid incident webhook', async () => {
 		// Nock page and incident details
 		nock.cleanAll();
 		nock(STATUSPAGE_ENDPOINT)
@@ -51,44 +51,9 @@ describe('validateComponentWebhook()', () => {
 			.reply(200, mock.page)
 			.get(`/pages/${mock.page.id}/components/${mock.component.id}`)
 			.reply(200, mock.component);
-	});
 
-	afterEach(() => {
-		nock.cleanAll();
-	});
-
-	test('should not throw on valid component webhook', async () => {
-		await validateComponentWebhook({
-			page: {
-				id: mock.page.id,
-				status_description: mock.page.status_description,
-			},
-			component: {
-				id: mock.component.id,
-				status: mock.component.status,
-				name: mock.component.name,
-			},
-		});
-	});
-
-	test('should not throw on incident webhook', async () => {
-		await validateComponentWebhook({
-			page: {
-				id: mock.page.id,
-				status_description: mock.page.status_description,
-			},
-			incident: {
-				id: mock.incident.id,
-				status: mock.incident.status,
-				impact: mock.incident.impact,
-				name: mock.incident.name,
-			},
-		});
-	});
-
-	test('should throw on invalid incident webhook', async () => {
 		await expect(
-			validateComponentWebhook({
+			validateComponentUpdate({
 				page: {
 					id: mock.page.id,
 					status_description: mock.page.status_description,
@@ -100,11 +65,13 @@ describe('validateComponentWebhook()', () => {
 				},
 			}),
 		).rejects.toThrow();
+
+		nock.cleanAll();
 	});
 });
 
-describe('validateIncidentWebhook()', () => {
-	beforeAll(() => {
+describe('validateIncidentUpdate()', () => {
+	test('should throw on invalid incident webhook', async () => {
 		// Nock page and incident details
 		nock.cleanAll();
 		nock(STATUSPAGE_ENDPOINT)
@@ -112,44 +79,9 @@ describe('validateIncidentWebhook()', () => {
 			.reply(200, mock.page)
 			.get(`/pages/${mock.page.id}/incidents/${mock.incident.id}`)
 			.reply(200, mock.incident);
-	});
 
-	afterEach(() => {
-		nock.cleanAll();
-	});
-
-	test('should not throw on valid incident webhook', async () => {
-		await validateIncidentWebhook({
-			page: {
-				id: mock.page.id,
-				status_description: mock.page.status_description,
-			},
-			incident: {
-				id: mock.incident.id,
-				status: mock.incident.status,
-				impact: mock.incident.impact,
-				name: mock.incident.name,
-			},
-		});
-	});
-
-	test('should not throw on component webhook', async () => {
-		await validateIncidentWebhook({
-			page: {
-				id: mock.page.id,
-				status_description: mock.page.status_description,
-			},
-			component: {
-				id: mock.component.id,
-				status: mock.component.status,
-				name: mock.component.name,
-			},
-		});
-	});
-
-	test('should throw on invalid incident webhook', async () => {
 		await expect(
-			validateIncidentWebhook({
+			validateIncidentUpdate({
 				page: {
 					id: mock.page.id,
 					status_description: mock.page.status_description,
@@ -162,5 +94,7 @@ describe('validateIncidentWebhook()', () => {
 				},
 			}),
 		).rejects.toThrow();
+
+		nock.cleanAll();
 	});
 });

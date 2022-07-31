@@ -27,7 +27,7 @@ afterAll(async () => {
 
 describe('action-integration-statuspage-import-incident', () => {
 	describe('incident update webhooks', () => {
-		test.only('should upsert statuspage and incident contracts', async () => {
+		test('should upsert statuspage and incident contracts', async () => {
 			// Nock page and incident details
 			const data = {
 				page: {
@@ -78,20 +78,20 @@ describe('action-integration-statuspage-import-incident', () => {
 			await ctx.flushAll(ctx.session);
 
 			// Assert the statuspage contract was created
-			await ctx.waitForMatch({
+			const statuspage = await ctx.waitForMatch({
 				type: 'object',
-				required: ['type', 'data'],
+				required: ['type', 'name', 'data'],
 				properties: {
 					type: {
 						const: 'statuspage@1.0.0',
 					},
+					name: {
+						const: data.page.name,
+					},
 					data: {
 						type: 'object',
-						required: ['name', 'domain', 'subdomain', 'mirrors', 'description'],
+						required: ['domain', 'subdomain', 'mirrors', 'description'],
 						properties: {
-							name: {
-								const: data.page.name,
-							},
 							domain: {
 								const: data.page.domain,
 							},
@@ -121,7 +121,7 @@ describe('action-integration-statuspage-import-incident', () => {
 						const: 'incident@1.0.0',
 					},
 					name: {
-						const: data.incident.name,
+						const: `${statuspage.name} - ${data.incident.name}`,
 					},
 					data: {
 						type: 'object',
@@ -296,20 +296,20 @@ describe('action-integration-statuspage-import-incident', () => {
 			await ctx.flushAll(ctx.session);
 
 			// Assert the statuspage contract was created
-			await ctx.waitForMatch({
+			const statuspage = await ctx.waitForMatch({
 				type: 'object',
 				required: ['type', 'data'],
 				properties: {
 					type: {
 						const: 'statuspage@1.0.0',
 					},
+					name: {
+						const: data.page.name,
+					},
 					data: {
 						type: 'object',
-						required: ['name', 'domain', 'subdomain', 'mirrors', 'description'],
+						required: ['domain', 'subdomain', 'mirrors', 'description'],
 						properties: {
-							name: {
-								const: data.page.name,
-							},
 							domain: {
 								const: data.page.domain,
 							},
@@ -339,7 +339,7 @@ describe('action-integration-statuspage-import-incident', () => {
 						const: 'incident@1.0.0',
 					},
 					name: {
-						const: data.component.name,
+						const: `${statuspage.name} - ${data.component.name}: ${data.component.status}`,
 					},
 					data: {
 						type: 'object',

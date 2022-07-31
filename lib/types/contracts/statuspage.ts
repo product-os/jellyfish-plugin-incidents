@@ -9,7 +9,6 @@
 import type { Contract, ContractDefinition } from 'autumndb';
 
 export interface StatuspageData {
-	name?: string;
 	description?: string;
 	domain?: string;
 	subdomain: string;

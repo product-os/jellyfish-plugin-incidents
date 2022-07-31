@@ -14,9 +14,6 @@ export const statuspage: ContractDefinition = {
 					type: 'object',
 					required: ['subdomain'],
 					properties: {
-						name: {
-							type: 'string',
-						},
 						description: {
 							type: 'string',
 						},

@@ -20,20 +20,32 @@ import type { IncidentContract, StatuspageContract } from '../types';
 
 export const STATUSPAGE_ENDPOINT = 'https://api.statuspage.io/v1';
 
+interface UpdatePayloadPage {
+	id: string;
+	status_description: string;
+	[k: string]: string;
+}
+
 interface UpdatePayload {
-	page: {
-		id: string;
-		status_description: string;
-		[k: string]: string;
-	};
-	incident?: {
+	page: UpdatePayloadPage;
+	[k: string]: unknown;
+}
+
+interface IncidentUpdatePayload {
+	page: UpdatePayloadPage;
+	incident: {
 		status: string;
 		id: string;
 		impact: string;
 		name: string;
 		[k: string]: string;
 	};
-	component?: {
+	[k: string]: unknown;
+}
+
+interface ComponentUpdatePayload {
+	page: UpdatePayloadPage;
+	component: {
 		status: string;
 		id: string;
 		name: string;
@@ -111,68 +123,6 @@ export function getStatus(externalStatus: string): string {
 		return 'resolved';
 	}
 	return statusOptions.includes(externalStatus) ? externalStatus : 'open';
-}
-
-/**
- * Validate incoming Statuspage incident webhook payloads
- *
- * @param payload - parsed webhook payload
- */
-export async function validateIncidentWebhook(
-	payload: UpdatePayload,
-): Promise<void> {
-	if (!payload.incident) {
-		return;
-	}
-	const response = await httpStatuspage(
-		environment.integration.statuspage.pages[payload.page.id],
-		`/pages/${payload.page.id}/incidents/${payload.incident.id}`,
-	);
-	assert(
-		response.data.status === payload.incident.status &&
-			response.data.impact === payload.incident.impact &&
-			response.data.name === payload.incident.name,
-		new Error(
-			`Statuspage incident mismatch: ${JSON.stringify(
-				{
-					page: payload.page.id,
-					incident: payload.incident.id,
-					status: payload.incident.status,
-					remoteStatus: response.data.status,
-					impact: payload.incident.impact,
-					remoteImpact: response.data.impact,
-					name: payload.incident.name,
-					remoteName: response.data.name,
-				},
-				null,
-				2,
-			)}`,
-		),
-	);
-}
-
-/**
- * Validate incoming Statuspage component webhook payloads
- *
- * @param payload - parsed webhook payload
- */
-export async function validateComponentWebhook(
-	payload: UpdatePayload,
-): Promise<void> {
-	if (!payload.component) {
-		return;
-	}
-	const response = await httpStatuspage(
-		environment.integration.statuspage.pages[payload.page.id],
-		`/pages/${payload.page.id}/components/${payload.component.id}`,
-	);
-	assert(
-		response.data.status === payload.component.status &&
-			response.data.name === payload.component.name,
-		new Error(
-			`Statuspage component mismatch: ${payload.page.id}, ${payload.component.id}`,
-		),
-	);
 }
 
 /**
@@ -258,6 +208,41 @@ async function initIncident(
 }
 
 /**
+ * Validate incoming Statuspage incident webhook payloads
+ *
+ * @param payload - parsed webhook payload
+ */
+export async function validateIncidentUpdate(
+	payload: IncidentUpdatePayload,
+): Promise<void> {
+	const response = await httpStatuspage(
+		environment.integration.statuspage.pages[payload.page.id],
+		`/pages/${payload.page.id}/incidents/${payload.incident.id}`,
+	);
+	assert(
+		response.data.status === payload.incident.status &&
+			response.data.impact === payload.incident.impact &&
+			response.data.name === payload.incident.name,
+		new Error(
+			`Statuspage incident mismatch: ${JSON.stringify(
+				{
+					page: payload.page.id,
+					incident: payload.incident.id,
+					status: payload.incident.status,
+					remoteStatus: response.data.status,
+					impact: payload.incident.impact,
+					remoteImpact: response.data.impact,
+					name: payload.incident.name,
+					remoteName: response.data.name,
+				},
+				null,
+				2,
+			)}`,
+		),
+	);
+}
+
+/**
  * Create incident contract from incident update webhook payload
  *
  * @param context - worker context
@@ -267,14 +252,17 @@ async function initIncident(
  * @param statuspage - statuspage contract
  * @returns incident contract summary
  */
-async function fromIncidentPayload(
+export async function fromIncidentUpdate(
 	context: WorkerContext,
 	session: AutumnDBSession,
 	request: ActionHandlerRequest,
-	payload: UpdatePayload,
+	payload: IncidentUpdatePayload,
 	statuspage: StatuspageContract,
 ): Promise<ContractSummary> {
-	assert(payload.incident);
+	await validateIncidentUpdate(payload);
+
+	// Create incident contract
+	const name = `${statuspage.name} - ${payload.incident.name}`;
 	const status = getStatus(payload.incident.status);
 	const incidentMirrorId = `${STATUSPAGE_ENDPOINT}/pages/${payload.page.id}/incidents/${payload.incident.id}`;
 	let incident = (await getByMirrorId(
@@ -298,11 +286,11 @@ async function fromIncidentPayload(
 				value: payload.incident.impact,
 			});
 		}
-		if (incident.name !== payload.incident.name) {
+		if (incident.name !== name) {
 			patch.push({
 				op: 'replace',
 				path: '/name',
-				value: payload.incident.name,
+				value: name,
 			});
 		}
 		await context.patchCard(
@@ -327,7 +315,7 @@ async function fromIncidentPayload(
 				actor: request.actor,
 			},
 			{
-				name: payload.incident.name || '',
+				name,
 				slug: `incident-${uuidv4()}`,
 				data: {
 					description: payload.page.status_description,
@@ -349,6 +337,27 @@ async function fromIncidentPayload(
 }
 
 /**
+ * Validate incoming Statuspage component webhook payloads
+ *
+ * @param payload - parsed webhook payload
+ */
+export async function validateComponentUpdate(
+	payload: ComponentUpdatePayload,
+): Promise<void> {
+	const response = await httpStatuspage(
+		environment.integration.statuspage.pages[payload.page.id],
+		`/pages/${payload.page.id}/components/${payload.component.id}`,
+	);
+	assert(
+		response.data.status === payload.component.status &&
+			response.data.name === payload.component.name,
+		new Error(
+			`Statuspage component mismatch: ${payload.page.id}, ${payload.component.id}`,
+		),
+	);
+}
+
+/**
  * Create incident contract from component update webhook payload
  *
  * @param context - worker context
@@ -358,14 +367,17 @@ async function fromIncidentPayload(
  * @param statuspage - statuspage contract
  * @returns incident contract summary
  */
-async function fromComponentPayload(
+export async function fromComponentUpdate(
 	context: WorkerContext,
 	session: AutumnDBSession,
 	request: ActionHandlerRequest,
-	payload: UpdatePayload,
+	payload: ComponentUpdatePayload,
 	statuspage: StatuspageContract,
 ): Promise<ContractSummary> {
-	assert(payload.component);
+	await validateComponentUpdate(payload);
+
+	// Create incident contract
+	const name = `${statuspage.name} - ${payload.component.name}: ${payload.component.status}`;
 	const status = getStatus(payload.component.status);
 	const incidentMirrorId = `${STATUSPAGE_ENDPOINT}/pages/${payload.page.id}/components/${payload.component.id}`;
 	let incident = (await getByMirrorId(
@@ -382,11 +394,11 @@ async function fromComponentPayload(
 				value: status,
 			});
 		}
-		if (incident.name !== payload.component.name) {
+		if (incident.name !== name) {
 			patch.push({
 				op: 'replace',
 				path: '/name',
-				value: payload.component.name,
+				value: name,
 			});
 		}
 		await context.patchCard(
@@ -411,7 +423,7 @@ async function fromComponentPayload(
 				actor: request.actor,
 			},
 			{
-				name: payload.component.name || '',
+				name,
 				slug: `incident-${uuidv4()}`,
 				data: {
 					description: payload.page.status_description,
@@ -469,8 +481,8 @@ const handler: ActionDefinition['handler'] = async (
 			},
 			{
 				slug: `statuspage-${payload.page.id}`,
+				name: remoteStatuspage.data.name || payload.page.id || '',
 				data: {
-					name: remoteStatuspage.data.name || '',
 					description: remoteStatuspage.data.page_description || '',
 					domain: remoteStatuspage.data.domain || '',
 					subdomain: remoteStatuspage.data.subdomain || '',
@@ -480,17 +492,23 @@ const handler: ActionDefinition['handler'] = async (
 		)) as StatuspageContract;
 	}
 
-	// Validate webhook
-	await Promise.all([
-		await validateIncidentWebhook(payload),
-		await validateComponentWebhook(payload),
-	]);
-
-	// Upsert incident contract
+	// Create and initialize incident contracts
 	if (payload.incident) {
-		return fromIncidentPayload(context, session, request, payload, statuspage);
+		return fromIncidentUpdate(
+			context,
+			session,
+			request,
+			payload as IncidentUpdatePayload,
+			statuspage,
+		);
 	} else {
-		return fromComponentPayload(context, session, request, payload, statuspage);
+		return fromComponentUpdate(
+			context,
+			session,
+			request,
+			payload as ComponentUpdatePayload,
+			statuspage,
+		);
 	}
 };
 

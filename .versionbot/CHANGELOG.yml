@@ -1,4 +1,16 @@
 - commits:
+    - subject: Update @balena/jellyfish-worker from 32.3.1 to 32.3.2
+      hash: 151ec3462bfcba5af0853514a67eb82ee7a8399b
+      body: ""
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: renovate[bot]
+      nested: []
+  version: 7.3.6
+  title: "'Update @balena/jellyfish-worker from 32.3.1 to 32.3.2'"
+  date: 2022-07-31T12:57:32.431Z
+- commits:
     - subject: Update jest monorepo
       hash: b4971981a3eef4d78f9fb7ed4cc818367ec6bf98
       body: ""

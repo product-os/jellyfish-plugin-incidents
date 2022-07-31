@@ -4,6 +4,10 @@
 
 ## 1.0.1 - 2022-03-22
 
+## 7.3.6 - 2022-07-31
+
+* Update @balena/jellyfish-worker from 32.3.1 to 32.3.2 [renovate[bot]]
+
 ## 7.3.5 - 2022-07-31
 
 * Update jest monorepo [renovate[bot]]

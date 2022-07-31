@@ -1,4 +1,16 @@
 - commits:
+    - subject: Update lint-staged from 13.0.2 to 13.0.3
+      hash: a744fdd220f9bd3fa40098b0bf89673c07d6d843
+      body: ""
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: renovate[bot]
+      nested: []
+  version: 7.3.9
+  title: "'Update lint-staged from 13.0.2 to 13.0.3'"
+  date: 2022-07-31T14:11:15.863Z
+- commits:
     - subject: Update @balena/jellyfish-worker from 32.3.2 to 32.3.3
       hash: b203d6d3c9927d332223b1129627b5e09d7574f3
       body: ""

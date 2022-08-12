@@ -4,6 +4,10 @@
 
 ## 1.0.1 - 2022-03-22
 
+## 8.0.0 - 2022-08-12
+
+* Replace incidents view with a channel [Josh Bowling]
+
 ## 7.3.38 - 2022-08-10
 
 * Update autumndb from 22.0.8 to 22.1.0 [renovate[bot]]

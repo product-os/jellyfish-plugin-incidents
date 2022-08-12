@@ -1,4 +1,18 @@
 - commits:
+    - subject: Replace incidents view with a channel
+      hash: 8858a1b3878a1411be8ee8d3bc46d05ed3abdfe3
+      body: ""
+      footer:
+        Change-type: major
+        change-type: major
+        Signed-off-by: Josh Bowling <josh@monarci.com>
+        signed-off-by: Josh Bowling <josh@monarci.com>
+      author: Josh Bowling
+      nested: []
+  version: 8.0.0
+  title: "'Replace incidents view with a channel'"
+  date: 2022-08-12T06:38:21.691Z
+- commits:
     - subject: Update autumndb from 22.0.8 to 22.1.0
       hash: 667a6f89006690039f50e9f147bd051300f4af48
       body: ""

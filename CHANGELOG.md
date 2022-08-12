@@ -4,6 +4,10 @@
 
 ## 1.0.1 - 2022-03-22
 
+## 8.0.1 - 2022-08-12
+
+* Update @balena/jellyfish-worker from 32.6.5 to 32.6.7 [renovate[bot]]
+
 ## 8.0.0 - 2022-08-12
 
 * Replace incidents view with a channel [Josh Bowling]

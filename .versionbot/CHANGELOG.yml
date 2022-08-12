@@ -1,4 +1,16 @@
 - commits:
+    - subject: Update @balena/jellyfish-worker from 32.6.5 to 32.6.7
+      hash: 16a5fcd7a624dd89d6a281486667a45df19016a7
+      body: ""
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: renovate[bot]
+      nested: []
+  version: 8.0.1
+  title: "'Update @balena/jellyfish-worker from 32.6.5 to 32.6.7'"
+  date: 2022-08-12T06:48:02.473Z
+- commits:
     - subject: Replace incidents view with a channel
       hash: 8858a1b3878a1411be8ee8d3bc46d05ed3abdfe3
       body: ""

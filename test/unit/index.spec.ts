@@ -7,5 +7,5 @@ test('Expected contracts are loaded', () => {
 	const contracts = pluginManager.getCards();
 	expect(contracts['incident'].name).toEqual('Incident');
 	expect(contracts['post-mortem'].name).toEqual('Post-mortem');
-	expect(contracts['view-all-incidents'].name).toEqual('Incidents');
+	expect(contracts['channel-incidents'].name).toEqual('Incidents');
 });

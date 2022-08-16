@@ -176,6 +176,46 @@ async function initIncident(
 		actor = hubot.id;
 	}
 
+	// Create and link new thread to the incident
+	const thread = await context.insertCard(
+		session,
+		context.cards['thread@1.0.0'] as TypeContract,
+		{
+			timestamp: request.timestamp,
+			attachEvents: false,
+		},
+		{
+			slug: `thread-${uuidv4()}`,
+		},
+	);
+	assert(
+		thread,
+		new Error(`Failed to create thread on incident: ${incident.id}`),
+	);
+	await context.insertCard(
+		session,
+		context.cards['link@1.0.0'] as TypeContract,
+		{
+			timestamp: request.timestamp,
+			attachEvents: false,
+		},
+		{
+			slug: `link-incident-${incident.id}-has-${thread.id}`,
+			name: 'has',
+			data: {
+				inverseName: 'is of',
+				from: {
+					id: incident.id,
+					type: incident.type,
+				},
+				to: {
+					id: thread.id,
+					type: thread.type,
+				},
+			},
+		},
+	);
+
 	// Add message with ping to incident timeline
 	await context.insertCard(
 		session,
@@ -189,12 +229,12 @@ async function initIncident(
 				actor,
 				context: request.logContext,
 				action: 'action-create-event@1.0.0',
-				card: incident.id,
-				type: incident.type,
+				card: thread.id,
+				type: thread.type,
 				epoch: new Date().valueOf(),
 				timestamp: request.timestamp,
 				input: {
-					id: incident.id,
+					id: thread.id,
 				},
 				arguments: {
 					type: 'message',

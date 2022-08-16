@@ -4,6 +4,10 @@
 
 ## 1.0.1 - 2022-03-22
 
+## 8.0.6 - 2022-08-16
+
+* Create ping message on thread, update README [Josh Bowling]
+
 ## 8.0.5 - 2022-08-15
 
 * Update autumndb from 22.1.0 to 22.1.8 [renovate[bot]]

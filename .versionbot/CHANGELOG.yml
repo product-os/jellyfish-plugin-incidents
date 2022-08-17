@@ -1,4 +1,16 @@
 - commits:
+    - subject: Update @balena/jellyfish-worker from 33.0.7 to 33.0.8
+      hash: 4ec67db7a9f6a4dd205c5093dcaaebfa77ee85b9
+      body: ""
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: renovate[bot]
+      nested: []
+  version: 8.0.7
+  title: "'Update @balena/jellyfish-worker from 33.0.7 to 33.0.8'"
+  date: 2022-08-17T01:23:06.351Z
+- commits:
     - subject: Create ping message on thread, update README
       hash: af15c52b1744d0c4972cabbef8b76ada04f7739d
       body: ""

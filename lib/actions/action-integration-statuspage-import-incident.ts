@@ -126,7 +126,7 @@ export function getStatus(externalStatus: string): string {
 }
 
 /**
- * Link an incident to a statuspage and add ping message to its timeline
+ * Link an incident to a statuspage and ping the team
  *
  * @param context - worker context
  * @param session - execution session
@@ -185,6 +185,7 @@ async function initIncident(
 			attachEvents: false,
 		},
 		{
+			name: incident.name,
 			slug: `thread-${uuidv4()}`,
 		},
 	);
@@ -216,7 +217,28 @@ async function initIncident(
 		},
 	);
 
-	// Add message with ping to incident timeline
+	// Add message with ping to incident thread
+	const overview = [incident.name];
+	if (incident.data.description) {
+		overview.push(`(${incident.data.description})`);
+	}
+	if (incident.data.impact) {
+		overview.push(`(impact=${incident.data.impact})`);
+	}
+	const message = `@@balena New incident from Statuspage
+**${overview.join(' ')}**
+${incident.data
+	.mirrors![0].replace(STATUSPAGE_ENDPOINT, 'https://manage.statuspage.io')
+	.replace(/\/[^/]+$/, '')}
+
+- Confirm incident is not a false-positive
+- Investigate and escalate as needed
+- Attempt basic recovery
+- Update/resolve incident in StatusPage
+- Create a placeholder post-mortem in StatusPage
+- Hashtag incident with a brief summary for all-hands call
+- Complete post-mortem in StatusPage with additional information`;
+	console.log(message);
 	await context.insertCard(
 		session,
 		context.cards['action-request@1.0.0'] as TypeContract,
@@ -239,7 +261,7 @@ async function initIncident(
 				arguments: {
 					type: 'message',
 					payload: {
-						message: '@@reliability New incident from Statuspage',
+						message,
 					},
 				},
 			},

@@ -4,6 +4,10 @@
 
 ## 1.0.1 - 2022-03-22
 
+## 8.0.11 - 2022-08-17
+
+* Name thread, add details to ping [Josh Bowling]
+
 ## 8.0.10 - 2022-08-17
 
 * Update @balena/jellyfish-worker from 33.0.8 to 33.0.9 [renovate[bot]]

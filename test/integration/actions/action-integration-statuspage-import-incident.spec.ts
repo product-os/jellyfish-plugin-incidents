@@ -149,10 +149,13 @@ describe('incident update webhooks', () => {
 		// Assert thread for ping was created and linked
 		const thread = await ctx.waitForMatch({
 			type: 'object',
-			required: ['type'],
+			required: ['type', 'name'],
 			properties: {
 				type: {
 					const: 'thread@1.0.0',
+				},
+				name: {
+					const: incident.name,
 				},
 			},
 			$$links: {
@@ -191,7 +194,7 @@ describe('incident update webhooks', () => {
 							required: ['message'],
 							properties: {
 								message: {
-									const: '@@reliability New incident from Statuspage',
+									pattern: '@@balena New incident from Statuspage',
 								},
 							},
 						},
@@ -389,10 +392,13 @@ describe('component update webhooks', () => {
 		// Assert thread for ping was created and linked
 		const thread = await ctx.waitForMatch({
 			type: 'object',
-			required: ['type'],
+			required: ['type', 'name'],
 			properties: {
 				type: {
 					const: 'thread@1.0.0',
+				},
+				name: {
+					const: incident.name,
 				},
 			},
 			$$links: {
@@ -431,7 +437,7 @@ describe('component update webhooks', () => {
 							required: ['message'],
 							properties: {
 								message: {
-									const: '@@reliability New incident from Statuspage',
+									pattern: '@@balena New incident from Statuspage',
 								},
 							},
 						},

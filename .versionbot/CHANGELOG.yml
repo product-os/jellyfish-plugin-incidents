@@ -1,4 +1,18 @@
 - commits:
+    - subject: Add link to incident contract in ping
+      hash: 52b4a88eafd3c93191599b7b2f1f2ba592a5d676
+      body: ""
+      footer:
+        Change-type: patch
+        change-type: patch
+        Signed-off-by: Josh Bowling <josh@monarci.com>
+        signed-off-by: Josh Bowling <josh@monarci.com>
+      author: Josh Bowling
+      nested: []
+  version: 8.0.17
+  title: "'Add link to incident contract in ping'"
+  date: 2022-08-19T00:08:27.990Z
+- commits:
     - subject: Update @balena/jellyfish-worker from 33.0.15 to 33.0.17
       hash: 422bd1ee701b8c27106d040716edd4e97ee89305
       body: ""

@@ -4,6 +4,10 @@
 
 ## 1.0.1 - 2022-03-22
 
+## 8.0.17 - 2022-08-19
+
+* Add link to incident contract in ping [Josh Bowling]
+
 ## 8.0.16 - 2022-08-18
 
 * Update @balena/jellyfish-worker from 33.0.15 to 33.0.17 [renovate[bot]]

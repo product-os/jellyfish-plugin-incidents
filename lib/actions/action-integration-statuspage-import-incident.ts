@@ -227,6 +227,7 @@ async function initIncident(
 	}
 	const message = `@@balena New incident from Statuspage
 **${overview.join(' ')}**
+https://jel.ly.fish/${incident.slug}
 ${incident.data
 	.mirrors![0].replace(STATUSPAGE_ENDPOINT, 'https://manage.statuspage.io')
 	.replace(/\/[^/]+$/, '')}
@@ -238,7 +239,6 @@ ${incident.data
 - Create a placeholder post-mortem in StatusPage
 - Hashtag incident with a brief summary for all-hands call
 - Complete post-mortem in StatusPage with additional information`;
-	console.log(message);
 	await context.insertCard(
 		session,
 		context.cards['action-request@1.0.0'] as TypeContract,

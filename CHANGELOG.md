@@ -4,6 +4,10 @@
 
 ## 1.0.1 - 2022-03-22
 
+## 8.0.18 - 2022-08-20
+
+* Update @types/jest from 28.1.6 to 28.1.7 [renovate[bot]]
+
 ## 8.0.17 - 2022-08-19
 
 * Add link to incident contract in ping [Josh Bowling]

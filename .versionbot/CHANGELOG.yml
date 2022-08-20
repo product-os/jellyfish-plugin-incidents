@@ -1,4 +1,16 @@
 - commits:
+    - subject: Update @types/jest from 28.1.6 to 28.1.7
+      hash: 463582c355616240e9ae4b5989e6e1f8b1e808de
+      body: ""
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: renovate[bot]
+      nested: []
+  version: 8.0.18
+  title: "'Update @types/jest from 28.1.6 to 28.1.7'"
+  date: 2022-08-20T00:47:15.724Z
+- commits:
     - subject: Add link to incident contract in ping
       hash: 52b4a88eafd3c93191599b7b2f1f2ba592a5d676
       body: ""

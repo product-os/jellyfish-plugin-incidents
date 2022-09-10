@@ -1,4 +1,18 @@
 - commits:
+    - subject: Bump external packages
+      hash: 190e3bd775bf6c944c6a8bb26af4003a6c2f6eef
+      body: ""
+      footer:
+        Change-type: patch
+        change-type: patch
+        Signed-off-by: Josh Bowling <josh@monarci.com>
+        signed-off-by: Josh Bowling <josh@monarci.com>
+      author: Josh Bowling
+      nested: []
+  version: 8.0.41
+  title: "'Bump external packages'"
+  date: 2022-09-10T03:55:13.647Z
+- commits:
     - subject: Update @balena/jellyfish-worker from 33.0.37 to 33.0.38
       hash: c92f1b29ea05a9e1b0505d541770c4b99125ec3a
       body: ""

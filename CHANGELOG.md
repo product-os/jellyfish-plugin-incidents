@@ -4,6 +4,10 @@
 
 ## 1.0.1 - 2022-03-22
 
+## 8.0.68 - 2022-09-13
+
+* Update @balena/jellyfish-environment from 14.0.0 to 14.0.3 [renovate[bot]]
+
 ## 8.0.67 - 2022-09-13
 
 * CI: Move to Flowzone [Josh Bowling]

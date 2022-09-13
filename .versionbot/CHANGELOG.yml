@@ -1,4 +1,18 @@
 - commits:
+    - subject: "CI: Move to Flowzone"
+      hash: a90e6b7af8a582c7a0c6201c5dc33aba1ccc0da2
+      body: ""
+      footer:
+        Change-type: patch
+        change-type: patch
+        Signed-off-by: Josh Bowling <josh@monarci.com>
+        signed-off-by: Josh Bowling <josh@monarci.com>
+      author: Josh Bowling
+      nested: []
+  version: 8.0.67
+  title: ""
+  date: 2022-09-13T04:49:17.921Z
+- commits:
     - subject: Update autumndb from 22.2.35 to 22.2.38
       hash: e433e7afd7d18c8ff9e65801fd4c3b13912b4a84
       body: ""

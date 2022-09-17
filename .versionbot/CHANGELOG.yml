@@ -1,4 +1,16 @@
 - commits:
+    - subject: Update ts-jest from 29.0.0 to 29.0.1
+      hash: acc41b6108523964a0d8d39df242fe3797af2fdf
+      body: ""
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: renovate[bot]
+      nested: []
+  version: 8.0.77
+  title: ""
+  date: 2022-09-17T01:55:47.103Z
+- commits:
     - subject: Update @types/jest from 29.0.1 to 29.0.3
       hash: fd6ce3f3a12a9f36760a795c0747816e619aa5fd
       body: ""

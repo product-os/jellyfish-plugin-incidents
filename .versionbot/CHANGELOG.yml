@@ -1,4 +1,18 @@
 - commits:
+    - subject: "CI: Drop npm test:compose script"
+      hash: e38413233dc7d91d52e4f1ed036e7b865d132666
+      body: ""
+      footer:
+        Change-type: patch
+        change-type: patch
+        Signed-off-by: Josh Bowling <josh@monarci.com>
+        signed-off-by: Josh Bowling <josh@monarci.com>
+      author: Josh Bowling
+      nested: []
+  version: 8.0.88
+  title: ""
+  date: 2022-09-18T13:05:10.996Z
+- commits:
     - subject: Update docker-compose version to 3.9
       hash: 67b7bd0bca3cb1056d3ecf030379a42b06185c2c
       body: ""

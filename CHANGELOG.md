@@ -4,6 +4,10 @@
 
 ## 1.0.1 - 2022-03-22
 
+## 8.0.88 - 2022-09-18
+
+* CI: Drop npm test:compose script [Josh Bowling]
+
 ## 8.0.87 - 2022-09-18
 
 * Update docker-compose version to 3.9 [Josh Bowling]

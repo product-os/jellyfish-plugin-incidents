@@ -4,6 +4,10 @@
 
 ## 1.0.1 - 2022-03-22
 
+## 8.0.104 - 2022-09-19
+
+* Dev: Remove unenforceable .editorconfig [Josh Bowling]
+
 ## 8.0.103 - 2022-09-19
 
 * Update @balena/jellyfish-worker from 33.4.63 to 33.4.65 [renovate[bot]]

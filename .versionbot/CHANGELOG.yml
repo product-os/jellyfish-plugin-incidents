@@ -1,4 +1,16 @@
 - commits:
+    - subject: Update @balena/jellyfish-environment from 14.0.7 to 14.0.11
+      hash: e33da1bebbf7542b09e4f1efed571ce31b9b8c50
+      body: ""
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: renovate[bot]
+      nested: []
+  version: 8.0.105
+  title: ""
+  date: 2022-09-19T09:09:22.072Z
+- commits:
     - subject: "Dev: Remove unenforceable .editorconfig"
       hash: fc717f066f49d014e17bf43aa58f5cc4d7d2fb82
       body: |

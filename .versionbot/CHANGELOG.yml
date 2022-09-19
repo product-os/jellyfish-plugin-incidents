@@ -1,4 +1,18 @@
 - commits:
+    - subject: "Security: Add CodeQL analysis workflow"
+      hash: 9c6c580979826c400f5464554f637f2e63ccb6cd
+      body: ""
+      footer:
+        Change-type: patch
+        change-type: patch
+        Signed-off-by: Josh Bowling <josh@monarci.com>
+        signed-off-by: Josh Bowling <josh@monarci.com>
+      author: Josh Bowling
+      nested: []
+  version: 8.0.101
+  title: ""
+  date: 2022-09-19T05:27:51.346Z
+- commits:
     - subject: "Dev: Add .nvmrc"
       hash: 56d4094a7a852d591a3199655411370094a2417e
       body: ""

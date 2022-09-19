@@ -4,6 +4,10 @@
 
 ## 1.0.1 - 2022-03-22
 
+## 8.0.101 - 2022-09-19
+
+* Security: Add CodeQL analysis workflow [Josh Bowling]
+
 ## 8.0.100 - 2022-09-19
 
 * Dev: Add .nvmrc [Josh Bowling]

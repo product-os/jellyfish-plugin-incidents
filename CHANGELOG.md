@@ -4,6 +4,10 @@
 
 ## 1.0.1 - 2022-03-22
 
+## 8.0.127 - 2022-09-24
+
+* Update @balena/jellyfish-environment from 14.0.12 to 14.0.13 [renovate[bot]]
+
 ## 8.0.126 - 2022-09-24
 
 * Update ts-jest from 29.0.1 to 29.0.2 [renovate[bot]]

@@ -4,6 +4,10 @@
 
 ## 1.0.1 - 2022-03-22
 
+## 8.0.136 - 2022-09-27
+
+* Rely on flowzone for docs publishing [Page-]
+
 ## 8.0.135 - 2022-09-27
 
 * Update @balena/jellyfish-worker from 34.1.24 to 34.1.26 [renovate[bot]]

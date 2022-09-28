@@ -1,4 +1,16 @@
 - commits:
+    - subject: Update @balena/jellyfish-environment from 14.0.15 to 14.0.17
+      hash: 56ef0a9ecc32c5e115c1831db52cea75182c6589
+      body: ""
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: renovate[bot]
+      nested: []
+  version: 8.0.146
+  title: ""
+  date: 2022-09-28T09:06:34.298Z
+- commits:
     - subject: Change engines to >=16 to enable node 18 tests/usage
       hash: ea7d6a6a7442f1093e6e77cda9d39cd944188dc9
       body: ""

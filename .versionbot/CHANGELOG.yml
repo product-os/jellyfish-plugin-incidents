@@ -1,4 +1,18 @@
 - commits:
+    - subject: "Dev: Fix prettier npm scripts"
+      hash: c463c282d074b292a8960a5264994665de87c1a1
+      body: ""
+      footer:
+        Change-type: patch
+        change-type: patch
+        Signed-off-by: Josh Bowling <josh@monarci.com>
+        signed-off-by: Josh Bowling <josh@monarci.com>
+      author: Josh Bowling
+      nested: []
+  version: 8.0.184
+  title: ""
+  date: 2022-10-08T10:20:56.865Z
+- commits:
     - subject: "Dev: Use prettier for json/yml"
       hash: 91270da4be185fa90e23bcffb72fb83282757dab
       body: ""

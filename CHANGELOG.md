@@ -4,6 +4,10 @@
 
 ## 1.0.1 - 2022-03-22
 
+## 8.0.185 - 2022-10-08
+
+* Dev: Add .prettierignore [Josh Bowling]
+
 ## 8.0.184 - 2022-10-08
 
 * Dev: Fix prettier npm scripts [Josh Bowling]

@@ -4,6 +4,10 @@
 
 ## 1.0.1 - 2022-03-22
 
+## 8.0.203 - 2022-10-10
+
+* Update @balena/jellyfish-worker from 35.0.24 to 35.0.29 [renovate[bot]]
+
 ## 8.0.202 - 2022-10-10
 
 * CI: Use JSON for Jest config [Josh Bowling]

@@ -1,4 +1,16 @@
 - commits:
+    - subject: Update @balena/jellyfish-environment from 14.3.10 to 14.3.11
+      hash: 8a3b8f91237273ea2d9fa69f5ca2a9d4e1f66979
+      body: ""
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: renovate[bot]
+      nested: []
+  version: 8.0.200
+  title: ""
+  date: 2022-10-10T03:24:44.075Z
+- commits:
     - subject: Update autumndb from 22.2.134 to 22.2.135
       hash: 7f75eeb51509bfa48804f7b9b22ff62b5f2a9c05
       body: ""

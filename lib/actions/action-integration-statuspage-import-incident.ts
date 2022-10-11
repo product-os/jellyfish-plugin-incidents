@@ -167,14 +167,11 @@ async function initIncident(
 	);
 
 	// Actor to create ping message with
-	let actor = request.actor;
 	const hubot = await context.getCardBySlug(
 		context.privilegedSession,
 		'user-hubot@1.0.0',
 	);
-	if (hubot) {
-		actor = hubot.id;
-	}
+	assert(hubot, 'user-hubot not found');
 
 	// Create and link new thread to the incident
 	const thread = await context.insertCard(
@@ -248,7 +245,7 @@ ${incident.data
 		},
 		{
 			data: {
-				actor,
+				actor: hubot.id,
 				context: request.logContext,
 				action: 'action-create-event@1.0.0',
 				card: thread.id,

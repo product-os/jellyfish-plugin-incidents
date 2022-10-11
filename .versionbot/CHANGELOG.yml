@@ -1,4 +1,18 @@
 - commits:
+    - subject: Always use hubot user for ping
+      hash: e0e24e5acedf7e3aea710ae759287d2f9ca0362f
+      body: ""
+      footer:
+        Change-type: patch
+        change-type: patch
+        Signed-off-by: Josh Bowling <josh@monarci.com>
+        signed-off-by: Josh Bowling <josh@monarci.com>
+      author: Josh Bowling
+      nested: []
+  version: 8.0.210
+  title: ""
+  date: 2022-10-11T03:09:52.449Z
+- commits:
     - subject: Update typedoc from 0.23.15 to 0.23.16
       hash: 1417b2b7e6a0dc58f340afd404090ef72d34a1f1
       body: ""

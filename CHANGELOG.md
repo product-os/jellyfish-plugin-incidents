@@ -4,6 +4,10 @@
 
 ## 1.0.1 - 2022-03-22
 
+## 8.0.210 - 2022-10-11
+
+* Always use hubot user for ping [Josh Bowling]
+
 ## 8.0.209 - 2022-10-11
 
 * Update typedoc from 0.23.15 to 0.23.16 [renovate[bot]]

@@ -4,6 +4,10 @@
 
 ## 1.0.1 - 2022-03-22
 
+## 8.0.211 - 2022-10-11
+
+* Update @balena/jellyfish-worker from 35.0.31 to 35.0.33 [renovate[bot]]
+
 ## 8.0.210 - 2022-10-11
 
 * Always use hubot user for ping [Josh Bowling]

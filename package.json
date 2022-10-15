@@ -78,7 +78,7 @@
     "publishedAt": "2022-10-15T00:12:36.017Z"
   },
   "dependencies": {
-    "@balena/jellyfish-environment": "^14.3.12",
+    "@balena/jellyfish-environment": "^14.3.13",
     "axios": "^0.27.2",
     "skhema": "^6.0.6"
   }

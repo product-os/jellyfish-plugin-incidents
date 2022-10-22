@@ -4,6 +4,10 @@
 
 ## 1.0.1 - 2022-03-22
 
+## 8.0.233 - 2022-10-22
+
+* Update @balena/jellyfish-environment from 14.4.1 to 14.4.3 [renovate[bot]]
+
 ## 8.0.232 - 2022-10-22
 
 * Update simple-git-hooks from 2.8.0 to 2.8.1 [renovate[bot]]

@@ -1,4 +1,16 @@
 - commits:
+    - subject: Update @balena/jellyfish-environment from 14.4.1 to 14.4.3
+      hash: 434b5a3820a48a50dcebb5571e5a94ebd0bc2227
+      body: ""
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: renovate[bot]
+      nested: []
+  version: 8.0.233
+  title: ""
+  date: 2022-10-22T04:38:15.827Z
+- commits:
     - subject: Update simple-git-hooks from 2.8.0 to 2.8.1
       hash: 13f4fbc49561e97026d121f18ac9f45a7e21971a
       body: ""

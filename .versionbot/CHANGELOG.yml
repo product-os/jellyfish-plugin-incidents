@@ -1,4 +1,16 @@
 - commits:
+    - subject: Update autumndb from 22.2.158 to 22.2.159
+      hash: 18de9c7663953a7f9799dcdc148540cae61929f4
+      body: ""
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: renovate[bot]
+      nested: []
+  version: 8.0.245
+  title: ""
+  date: 2022-10-24T02:08:54.217Z
+- commits:
     - subject: "Docs: Remove badge from readme"
       hash: eb2c5528a7a1c84e21596eaff3c91722e1d6f43d
       body: ""

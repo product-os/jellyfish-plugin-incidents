@@ -1,4 +1,16 @@
 - commits:
+    - subject: Update typedoc from 0.23.18 to 0.23.19
+      hash: 96439277cdd4d2fb879c8f2105a831289391226e
+      body: ""
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: renovate[bot]
+      nested: []
+  version: 8.0.261
+  title: ""
+  date: 2022-10-28T03:48:35.080Z
+- commits:
     - subject: Update @balena/jellyfish-worker from 37.0.9 to 37.0.10
       hash: 074071ce88cb5b09bbcaa342649262584c7555ca
       body: ""

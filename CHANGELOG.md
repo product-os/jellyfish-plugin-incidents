@@ -4,6 +4,10 @@
 
 ## 1.0.1 - 2022-03-22
 
+## 8.0.278 - 2022-11-08
+
+* Update @balena/jellyfish-worker from 37.0.34 to 37.0.35 [renovate[bot]]
+
 ## 8.0.277 - 2022-11-07
 
 * Update @balena/jellyfish-worker from 37.0.30 to 37.0.34 [renovate[bot]]

@@ -4,6 +4,10 @@
 
 ## 1.0.1 - 2022-03-22
 
+## 8.0.293 - 2022-11-19
+
+* Update @balena/jellyfish-environment from 14.6.10 to 14.6.11 [renovate[bot]]
+
 ## 8.0.292 - 2022-11-19
 
 * Update typescript from 4.8.4 to 4.9.3 [renovate[bot]]

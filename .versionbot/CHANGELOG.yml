@@ -1,4 +1,16 @@
 - commits:
+    - subject: Update prettier from 2.7.1 to 2.8.0
+      hash: ab7753730be1a96e021c0c941873d180c38ec66b
+      body: ""
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: renovate[bot]
+      nested: []
+  version: 8.0.312
+  title: ""
+  date: 2022-11-26T06:18:34.218Z
+- commits:
     - subject: Update autumndb from 22.2.173 to 22.2.178
       hash: 0580d5df40ee472edb054009176ebcd0e86f7cba
       body: ""

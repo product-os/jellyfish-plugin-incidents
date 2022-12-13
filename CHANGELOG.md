@@ -4,6 +4,10 @@
 
 ## 1.0.1 - 2022-03-22
 
+## 8.1.0 - 2022-12-13
+
+* Update Node.js to 16.18.1 [Renovate Bot]
+
 ## 8.0.317 - 2022-12-13
 
 * CI: Stop extending renovate config [Josh Bowling]

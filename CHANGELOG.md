@@ -4,6 +4,10 @@
 
 ## 1.0.1 - 2022-03-22
 
+## 8.2.0 - 2022-12-14
+
+* Update Node.js to v19 [Renovate Bot]
+
 ## 8.1.0 - 2022-12-13
 
 * Update Node.js to 16.18.1 [Renovate Bot]

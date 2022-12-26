@@ -4,6 +4,10 @@
 
 ## 1.0.1 - 2022-03-22
 
+## 8.4.1 - 2022-12-26
+
+* Update dependency @types/uuid to 9.0.0 [Renovate Bot]
+
 ## 8.4.0 - 2022-12-21
 
 * Pin dependencies [Renovate Bot]

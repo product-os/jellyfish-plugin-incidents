@@ -1,4 +1,19 @@
 - commits:
+    - subject: Update dependency @types/uuid to 9.0.0
+      hash: 4f83dc9c2d45cee10f2a8a358cfe68b9b8ad83fc
+      body: |
+        Update @types/uuid to 9.0.0
+
+        Update @types/uuid from 8.3.4 to 9.0.0
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: Renovate Bot
+      nested: []
+  version: 8.4.1
+  title: ""
+  date: 2022-12-26T02:55:42.605Z
+- commits:
     - subject: Pin dependencies
       hash: 9be4e20260f1695b42a0ac06e50328616e3208f9
       body: |

@@ -1,4 +1,19 @@
 - commits:
+    - subject: Update postgres Docker tag to v15
+      hash: cf99a1598a54bb3fa8a15dd5af3703b249523bbc
+      body: |
+        Update postgres to 15
+
+        Update postgres from 14 to 15
+      footer:
+        Change-type: minor
+        change-type: minor
+      author: Renovate Bot
+      nested: []
+  version: 8.5.0
+  title: ""
+  date: 2022-12-27T03:47:46.810Z
+- commits:
     - subject: Update dependency @types/uuid to 9.0.0
       hash: 4f83dc9c2d45cee10f2a8a358cfe68b9b8ad83fc
       body: |

@@ -1,4 +1,19 @@
 - commits:
+    - subject: Update dependency axios to 1.2.1
+      hash: 202e73c91e18ba85a1bd7d9f27241ea5c176eef3
+      body: |
+        Update axios to 1.2.1
+
+        Update axios from 0.27.2 to 1.2.1
+      footer:
+        Change-type: minor
+        change-type: minor
+      author: Renovate Bot
+      nested: []
+  version: 8.6.0
+  title: ""
+  date: 2022-12-28T11:32:27.130Z
+- commits:
     - subject: Update postgres Docker tag to v15
       hash: cf99a1598a54bb3fa8a15dd5af3703b249523bbc
       body: |

@@ -1,8 +1,8 @@
-import { v4 as uuidv4 } from 'uuid';
+import { randomUUID } from 'node:crypto';
 import { statuspageIntegrationDefinition } from '../../../lib/integrations/statuspage';
 
 const logContext = {
-	id: `test-${uuidv4()}`,
+	id: `test-${randomUUID()}`,
 };
 
 describe('isEventValid()', () => {

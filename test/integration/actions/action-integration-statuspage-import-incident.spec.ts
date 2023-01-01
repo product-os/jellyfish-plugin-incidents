@@ -2,7 +2,7 @@ import { testUtils } from '@balena/jellyfish-worker';
 import { strict as assert } from 'assert';
 import { testUtils as autumndbTestUtils } from 'autumndb';
 import nock from 'nock';
-import { v4 as uuidv4 } from 'uuid';
+import { randomUUID } from 'node:crypto';
 import { IncidentContract, incidentsPlugin } from '../../../lib';
 import { STATUSPAGE_ENDPOINT } from '../../../lib/actions/action-integration-statuspage-import-incident';
 
@@ -60,7 +60,7 @@ describe('incident update webhooks', () => {
 				reason: null,
 			},
 			{
-				slug: `external-event-${uuidv4()}`,
+				slug: `external-event-${randomUUID()}`,
 				data: {
 					source: 'statuspage',
 					headers: {},
@@ -240,7 +240,7 @@ describe('incident update webhooks', () => {
 				reason: null,
 			},
 			{
-				slug: `external-event-${uuidv4()}`,
+				slug: `external-event-${randomUUID()}`,
 				data: {
 					source: 'statuspage',
 					headers: {},
@@ -306,7 +306,7 @@ describe('component update webhooks', () => {
 				reason: null,
 			},
 			{
-				slug: `external-event-${uuidv4()}`,
+				slug: `external-event-${randomUUID()}`,
 				data: {
 					source: 'statuspage',
 					headers: {},
@@ -482,7 +482,7 @@ describe('component update webhooks', () => {
 				reason: null,
 			},
 			{
-				slug: `external-event-${uuidv4()}`,
+				slug: `external-event-${randomUUID()}`,
 				data: {
 					source: 'statuspage',
 					headers: {},

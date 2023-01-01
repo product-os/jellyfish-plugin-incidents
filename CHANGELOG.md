@@ -4,6 +4,10 @@
 
 ## 1.0.1 - 2022-03-22
 
+## 8.6.1 - 2023-01-01
+
+* Drop uuid [Josh Bowling]
+
 ## 8.6.0 - 2022-12-28
 
 * Update dependency axios to 1.2.1 [Renovate Bot]

@@ -1,4 +1,16 @@
 - commits:
+    - subject: Drop uuid
+      hash: a8bc7405e9b2e6758651a3014cffd23da2ec3d25
+      body: ""
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: Josh Bowling
+      nested: []
+  version: 8.6.1
+  title: ""
+  date: 2023-01-01T07:51:27.120Z
+- commits:
     - subject: Update dependency axios to 1.2.1
       hash: 202e73c91e18ba85a1bd7d9f27241ea5c176eef3
       body: |

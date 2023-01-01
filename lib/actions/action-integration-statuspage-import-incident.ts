@@ -14,7 +14,7 @@ import type {
 import axios, { AxiosResponse } from 'axios';
 import type { Operation } from 'fast-json-patch';
 import _ from 'lodash';
-import { v4 as uuidv4 } from 'uuid';
+import { randomUUID } from 'node:crypto';
 import { statusOptions } from '../contracts/incident';
 import type { IncidentContract, StatuspageContract } from '../types';
 
@@ -183,7 +183,7 @@ async function initIncident(
 		},
 		{
 			name: incident.name,
-			slug: `thread-${uuidv4()}`,
+			slug: `thread-${randomUUID()}`,
 		},
 	);
 	assert(
@@ -375,7 +375,7 @@ export async function fromIncidentUpdate(
 			},
 			{
 				name,
-				slug: `incident-${uuidv4()}`,
+				slug: `incident-${randomUUID()}`,
 				data: {
 					description: payload.page.status_description,
 					status,
@@ -483,7 +483,7 @@ export async function fromComponentUpdate(
 			},
 			{
 				name,
-				slug: `incident-${uuidv4()}`,
+				slug: `incident-${randomUUID()}`,
 				data: {
 					description: payload.page.status_description,
 					status,

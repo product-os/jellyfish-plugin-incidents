@@ -1,7 +1,7 @@
 {
   "name": "@balena/jellyfish-plugin-incidents",
   "description": "Jellyfish Incidents Plugin",
-  "version": "8.9.0",
+  "version": "8.10.0",
   "repository": {
     "type": "git",
     "url": "https://github.com/product-os/jellyfish-plugin-incidents.git"
@@ -74,7 +74,7 @@
     "pre-commit": "npx lint-staged"
   },
   "versionist": {
-    "publishedAt": "2023-01-06T02:18:44.342Z"
+    "publishedAt": "2023-01-18T19:59:00.640Z"
   },
   "dependencies": {
     "@balena/jellyfish-environment": "^15.0.0",

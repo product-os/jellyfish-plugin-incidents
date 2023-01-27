@@ -4,6 +4,10 @@
 
 ## 1.0.1 - 2022-03-22
 
+## 8.12.0 - 2023-01-27
+
+* Update github/codeql-action digest to 3ebbd71 [Renovate Bot]
+
 ## 8.11.0 - 2023-01-26
 
 * Update github/codeql-action digest to 436dbd9 [Renovate Bot]

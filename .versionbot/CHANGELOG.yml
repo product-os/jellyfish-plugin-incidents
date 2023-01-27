@@ -1,4 +1,19 @@
 - commits:
+    - subject: Update github/codeql-action digest to 3ebbd71
+      hash: 33374fa25555548de9ea23f9f6400ed5502e2e40
+      body: |
+        Update github/codeql-action to
+
+        Update github/codeql-action from 2 to
+      footer:
+        Change-type: minor
+        change-type: minor
+      author: Renovate Bot
+      nested: []
+  version: 8.12.0
+  title: ""
+  date: 2023-01-27T10:57:14.204Z
+- commits:
     - subject: Update github/codeql-action digest to 436dbd9
       hash: 0b097cf94f5bed2e374082281e9dbd0501be8747
       body: |
